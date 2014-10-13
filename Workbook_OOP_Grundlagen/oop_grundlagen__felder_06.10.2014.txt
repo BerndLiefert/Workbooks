@@ -1,0 +1,274 @@
+Datenfelder / Array
+
+- Zusammenfassungen von Daten gleichen Typs (primitive DT, Klasse)
+
+- Datenfelder koennen gleichzeitig mehere Werte enthalten
+
+- der Zugriff auf die Werte im Datenfeld erfolgt elementweise
+
+      	     Dimension
+      	      
+	  ____/\____
+	 /          \
+
+	+--+--+--+--+
+feld	|  |  |  |  |
+	+--+--+--+--+
+	0   Index   Dimesion-1
+	  (Offset)
+
+Bsp.:
+feld[0] = 10;
+feld[10] = feld[9];
+feld[i] = i++;
+feld[h] = Hamster.getStandardHamster();
+
+
+In Java muessen Datenfelder deklariert/definiert werden
+
+Deklaration <Datentyp>[] <Bezeichner>;			Bsp.: int[] x;
+-----------
+(Bekanntmachung)
+
+oder
+
+<DT> <Bezeichner>[]					Bsp.: int x[];
+
+
+Definition <ArrayBezeichner> = new <DT>[Dimension];	Bsp.: x = new int[10];
+----------
+
+
+
+<DT>[] <Bezeichner> = new <DT>[Dimension];
+int[] x = new int[100];
+
+
+
+- beim Zugriff auf Datenfelder muss der Entwickler auf die Grenzen des Arrays achten
+
+   +--+--+--+
+x: |  |  |  |
+   +--+--+--+
+     0  1  2
+
+Fehler: 
+x[-1]
+x[3]
+
+Array out of bounce Exception
+
+Grenzen 0 bis Groeße - 1, Größe ermitteln mit Array.length
+
+int[] x = new int[10];
+
+< x.length
+
+
+
+
+
+Arrays von Objekten
+               |
+               +--> Methodenaufruf Objekt.methode()
+
+
+o> Hamster
+
+   +--+--+--+
+   |o>|o>|o>|
+   +--+--+--+
+    |
+    +--> vor()
+
+- Name des Objektes = Feldelement = 	kaefig[0].vor();
+					kaefig[1].vor();
+					...
+					kaefig[9].vor();
+
+
+# Wand
+o Hamster
+
++--+--
+| o|
++--+--
+| #|
++--+--
+| o|
++--+--
+| #|
++--+--
+
+	while(kaefig[i] != null && ...){
+
+	...
+	}
+
+
+
+mehrdimensionale Felder
+
+int [] x; //eindimensional
++--+--+--+
+|  |  |  |
++--+--+--+
+
+int [][] x; //mehrdimensional
++--+--+--+
+|  |  |  |
++--+--+--+
+|  |  |  |
++--+--+--+
+|  |  |  |
++--+--+--+
+
+
+   ____________
+  /__/__/__/__/|
+ /__/__/__/__/ |
+/  /  /  /  /  |  
++--+--+--+--+  |
+|  |  |  |  |  |
++--+--+--+--+  |
+|  |  |  |  |  |
++--+--+--+--+  |
+|  |  |  |  |  /
++--+--+--+--+ / 
+|  |  |  |  |/ 
++--+--+--+--+
+
+int [][][] x; //dreidimensional
+
+
+
+Dimension1
+
+	Dimension2
++--+	+--+--+--+  
+|  |----|  |  |  |	[0].length
++--+	+--+--+--+
+|  |--+
++--+  |	+--+--+--+
+|  |  +-|  |  |  |	[1].length
++--+	+--+--+--+
+|  |
++--+
+|  |
++--+
+|  |
++--+
+|  |
++--+
+
+
+zweidimensionales Feld als eindimensionales Feld
+				 ________        ________
+	0   1  2		/	 \      /        \   
+	+--+--+--+	+--+--+--+	+--+--+--+	+--+--+--+
+0	|  |  |  |	|  |  |  |	|  |  |  |	|  |  |  |
+	+--+--+--+	+--+--+--+	+--+--+--+	+--+--+--+
+1	|  |  |  |	0		1		2
+	+--+--+--+
+2	|  |  | X|
+	+--+--+--+
+
+
+
++--+--+--+--+--+--+--+--+--+
+|  |  |  |  |  |  |  |  | X|
++--+--+--+--+--+--+--+--+--+
+  0  1  2  3  4  5  6  7  8
+
+AS(AnzahlSpalten) = 3
+AZ(AnzahlZeilen) = 3
+
+AnzahlSpalten * 2 + 2
+
+3 * 2 = 6 + 2 = 8
+
+
+
+
+
+Funktionen und Methoden koennen Arrays erzeugen und als Funktionswert zurueckliefern
+
+
+bisher	boolean rechtsFrei(), boolean linksFrei()
+------
+
+
+neu	int [] erzeugeFeld(), 		Hamster [] erzeugeKaefig[] 
+---		{			{
+		return <int-Array>;	return <Hamster-Array>;
+		}			}
+
+
+
+Felder als Parameter fuer Methoden
+
+void prozedur( int [] x){		boolean funktion(Hamster[] y){
+
+//x ist eine ganzzahliges Feld		//y ist ein Hamsterfeld
+
+
+}					}
+
+
+void prozedur(int [][] x){
+
+//x ein mehrdimensionales 
+//ganzzahliges Feld
+
+}
+
+
+
+
+
+BubbleSort
+----------
+
+sortieren von ganzen Zahlen
+
+
+1. Pass
++---+---+---+---+
+| 3 |-2 | 0 |-1 | 
++---+---+---+---+
+  |___|
+  Vergleich
+
++---+---+---+---+
+|-2 | 3 | 0 |-1 | 
++---+---+---+---+
+      |___|
+
++---+---+---+---+
+|-2 | 0 | 3 |-1 | 
++---+---+---+---+
+          |___|
+
++---+---+---+---+
+|-2 | 0 |-1 | 3 | 3 steht bereits an seiner endglültigen Position
++---+---+---+---+
+
+2. Pass
+
++---+---+---+---+
+|-2 | 0 |-1 | 3 | 
++---+---+---+---+
+
++---+---+---+---+
+|-2 |-1 | 0 | 3 | 
++---+---+---+---+
+
+3. Pass (ohne Tausch)
+
++---+---+---+---+
+|-2 |-1 | 0 | 3 | 
++---+---+---+---+
+  |___|   |   |
+    |_____|   |
+       |______|
+  

@@ -1,0 +1,291 @@
+Objekte und Objektvariablen
+
+
+
+
+- Objekte sind Instanzen einer Klasse
+- eine Klasse ist ein Bauplan und ein Datentyp
+- eine Objektvariable ist ein Bezeichner für ein Objekt und referenziert Objetke
+
+
+
+			|
+Objektvariable	-------	|-----> Objekt
+	x		|	^   
+				|
+Objektvariable -----------------+
+	y
+
+
+
+- Objekte, die nicht mehr referneziert werden, werden durch den Garbage Collector (Müllsammler) entsort
+
+                     ^___^  
+x ---\/---> Objekt -(.__. )
+     /\      ^            \
+             |         |    |
+             |         |ob- |
+	     |	       |jekt|
+y ---\/------+         +----+
+     /\
+
+
+			Klasse
+        		/  |
+       		       /   |
+     		     |/_   v
+ 		Datentyp  Datentyp
+  
+			|
+Objektvariable	-------	|-----> Objekt
+	x		|	^   
+				|
+Objektvariable -----------------+
+	y
+
+
+
+
+Polymorphie
+----------- 
+
+-Vielgestaltigkeit ist die Moeglichkeit, dass eine Objektvariable auf Objekte "anderer" Datentypen (Klassen)
+ refenenzieren darf
+
+ Hamster paul = new Hamster(); 
+ - - - - ----       -.-.-.-.-. 
+
+ Klasse
+ - - - 
+
+ Objektvariable
+ --------------
+
+ Objekt
+ -.-.-.-
+
+
+
+ Hamster polymorph = new MeinHamster();
+ - - - -                 =============
+    \___ ____/        \_____ _____/
+        V                   V
+     Objektvariable      Objekt vom 
+   vom Typ Hamster      Typ MeinHamster
+     
+
+ Regel   
+
+   +---------+
+   | Hamster | Typ
+   +---------+
+   |         |
+   |         |
+   +---------+
+        ^
+        |
+        |
+ +-------------+
+ | MeinHamster | Subtyp
+ +-------------+
+ |             |
+ |             |
+ +-------------+  
+        ^
+        |
+        |
+ +-------------+
+ | DeinHamster | Subtyp
+ +-------------+
+ |             |
+ |             |
+ +-------------+  
+
+    
+
+- eine Objektvariable eines Typs (Klasse) kann Objekte von Subtypen (abgeleitete Klassen) referenzieren
+
+		+---+
+		| A |
+		+---+
+                 | |
+             +---+ |
+             |     |
+           +---+ +---+
+           | B | | C |
+           +---+ +---+
+                   |
+                   |
+                 +---+
+                 | D |
+                 +---+
+
+A x = new A();
+A x = new B();
+A x = new D();
+
+C y = new C();
+C y = new B(); falsch
+C y = new A(); falsch
+
+
+  Einschränkung der Signatur:
+ -----------------------------
+- eine polymorphe Objektvariable, die also ein Objekt eines Subtyps referenziert, darf dieses Objekt nur
+  so einsetzen, als wäre es ein Objekt vom Typ der Objektvariable
+
+
+
+   +---------+
+   | Hamster | Typ
+   +---------+
+   |         |		Signatur: vor(); linksUm(); gib(); nimm();
+   |         |			  vornFrei(); maulLeer(); kornDa();
+   +---------+
+        ^
+        |
+        |
+ +-------------+
+ | MeinHamster | Subtyp
+ +-------------+
+ |             |	Signatur: vor(); linksUm(); gib(); nimm(); rechtsUm();
+ +-------------+		  vornFrei(); maulLeer(); kornDa();
+ | +rechtsUm() |
+ +-------------+
+
+Hamster x = new MeinHamster();
+
+x.rechtsUm() falsch, da Hamster kein rechtsUm() kann
+
+        |
+Hamster |  MeinHamster
+        |  
+
+- da der Entwickler "sehr genau weiß", was spaeter für ein Objekt refenenziert wird, kann er den Compiler dies explizit erklaeren:
+  Typumwandlung, typecast
+  
+
+Hamster x = new MeinHamster();
+
+x.rechtsUm(); //Fehler, Compiler sagt: Nein
+
+((MeinHamster)x).rechtsUm(); //OK, Compiler sagt: Ja
+\______ ______/
+       V
+   Typecast
+
+
+
+
+Polymorphie
+
+ 
+1. Beispiel =================================================================================================
+
+void laufeZurMauer(Hamster x){
+
+	while(x.vornFrei()){
+
+		x.vor();
+
+	}
+
+
+}
+
+
+-------------------------------------------------
+
+
+main(){
+
+	Hamster a = new Hamster(0, 0, 0, 0);			|	laufeZurMauer(a);
+	MeinHamster b = new MeinHamster(1, 0, 0, 0);		|	laufeZurMauer(b);
+	DeinHamster c = new DeinHamster(2, 0, 0, 0);		|	laufeZurMauer(c);
+
+
+
+
+}
+
+
+
+
+
+
+2. Beispiel =================================================================================================
+
+
+
+
+void laufeZurMauer(Hamster [] k){
+
+               +------------------+
+	       | for i = 0 .. 2   |
+               | +----------------+ 
+               | | k[i].vornFrei()|
+               | | +--------------+
+               | | | k[i].vor()   |
+	       +-+-+--------------+
+
+
+}
+
+
+-------------------------------------------------
+
+
+main(){
+
+	Hamster [] kaefig = new Hamster[3];			|	laufeZurMauer(kaefig);
+		kaefig[0] = new Hamster(0,0,0,0);
+		kaefig[1] = new MeinHamster(1,0,0,0);
+		kaefig[2] = new DeinHamster(2,0,0,0);
+
+
+
+
+}
+
+
+
+
+Dynamisches Binden
+------------------
+
+- setzt man Polymorphie mit Klassenhierachien ein, in denen Methoden ueberschrieben werden, entscheidet sich
+  erst zur Laufzeit der Anwendung welche Methodenimplimentierung zum Einsatz kommt
+
+- Diese Entscheidung ist abhängig von den referenzierten Objekt fuer das die Methode aufgerufen wird
+
+
+	+---------+  
+	| Hamster |
+	+---------+
+	|	  |
+   	|         |
+        +---------+
+        | +vor(); |
+        +---------+
+             ^
+	     |
+	     |
+	+---------+  
+	|   Doof  |
+	+---------+
+	|	  |
+   	|         |
+        +---------+
+        | +vor(); |
+        +---------+
+
+
+Hamster x = new Doof();
+\___ ___/     
+    V
+Objektvariable
+vom Typ Hamster	
+
+	x.vor();	
+
+Es wird das vor() aus dem Objekt Doof ausgefuehrt

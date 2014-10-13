@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+<head>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function replace(){
+
+var input = $('#input').val();
+
+
+input = input.replace(/ /g, "&nbsp;");
+
+
+input = input.replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+
+input = input.replace(/>/g, "&gt;");
+
+input = input.replace(/</g, "&lt;");
+
+input = input.replace(/\n/g, "<br>");
+
+
+
+
+$('#output').text(input);
+
+
+
+
+}
+
+
+
+</script>
+</head>
+<body>
+
+<textarea id="input"></textarea>
+
+
+<button onclick="javascript:replace();">uebersetze</button>
+
+
+<span id="output"></span>
+
+
+
+
+</body>
+
+</html>

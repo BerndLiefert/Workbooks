@@ -1,0 +1,225 @@
+@CHARSET "ISO-8859-1";
+
+
+*{
+	margin:0;
+	padding:0;
+	font-family:Tahoma,Arial,sans-serif;
+}
+
+
+#forkme{
+	position:fixed;
+	top:0px;
+	right:0px;
+	z-index:9000;
+	
+}
+
+html{
+	overflow-y: scroll;
+	
+}
+
+html, body, #wrapper{
+min-height:800px;
+	
+}
+
+#wrapper{
+	width:860px;
+	margin:0 auto;
+}
+
+
+#header{
+	background:#01A9DB;
+	min-height:100px;
+}
+
+#sitename{
+	text-align:center;
+	color:#FFFFFF;
+}
+
+#siteslogan{
+	text-align:center;
+	font-style:italic;
+	color:#FFFFFF;
+}
+
+h1, h2, p{
+	padding:10px;
+}
+
+
+
+#copy{
+	position:fixed;
+	bottom:0px;
+	right:0px;
+	padding:10px;
+}
+
+.pagelink{
+color:white;
+text-decoration:none;
+padding:10px;
+background:#01A9DB;
+margin:10px;
+}
+
+.curpage{
+color:white;
+text-decoration:none;
+padding:10px;
+background:gray;
+margin:10px;
+}
+
+.pagetitle{
+text-align:center;
+padding:20px;
+}
+
+.post{
+background:#01A9DB;
+padding:10px;
+margin:10px;
+}
+
+.post a{
+color:#FFFFFF;
+}
+
+.info{
+padding:10px;
+margin:10px;
+color:white;
+background:green;
+border:5px solid darkgreen;
+}
+
+.error{
+padding:10px;
+margin:10px;
+color:white;
+background:red;
+border:5px solid darkred;
+}
+
+.debug{
+padding:10px;
+margin:10px;
+color:white;
+background:organe;
+border:5px solid #DF7401;
+}
+
+.action{
+	padding:10px;
+	margin:10px;
+	
+}
+
+#myloginform{
+	position:absolute;
+	top:0px;
+	right:0px;
+	margin:10px;
+	
+}
+
+#myloginform input{
+	width:100px;
+	
+}
+
+#myloginform label{
+	color:white;
+	
+}
+
+#logout{
+	position:absolute;
+	top:0px;
+	right:0px;
+	margin:10px;
+	
+}
+
+#logout a{
+	color:white;
+	
+}
+
+
+.myul{
+margin-left:40px;
+list-style-image:url(list.png);
+}
+
+.myol{
+margin-left:40px;
+list-style-image:none!important;
+}
+
+.header{
+text-decoration:underline;
+}
+
+.keyword{
+color:red;
+}
+
+.code{
+font-family:"Lucida Console",Courier;
+font-size:10pt;
+}
+
+.fazit{
+color:#01A9DB;
+text-decoration:underline;
+
+
+}
+
+article{
+padding:10px;
+margin:10px 0 10px 0;
+}
+
+.topic{
+border-bottom:4px solid black;
+}
+
+.blue{
+font-size:1.2em;
+color:#01A9DB;
+}
+
+.comment{
+color:gray;
+}
+
+.mytable{
+border-collapse:collapse;
+}
+
+.mytable th{
+background:gray;
+}
+
+.mytable tr:nth-child(even){
+background:silver;
+}
+
+.mytable th, .mytable td{
+padding:8px;
+}
+
+.mycode{
+padding:10px;
+background:#D8D8D8;
+}
+

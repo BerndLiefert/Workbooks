@@ -1,0 +1,111 @@
+﻿OOP - Objektorientierte Programmierung
+
++----------
+|
+|  1     2
+|  O>   <O
+|
++----------
+
+Hamster 1 und Hamster 2
+- Position im Territorium
+- Blickrichtung
+- Farbe
+- Körner im Maul
+
+Gemeinsamkeiten, aber unterschiedliche Ausprägungen
+Gemeinsamkeiten => Eigenschaften bzw. Attribute
+
+Ausprägungen => Eigenschaftswerte, Attributwerte
+
+----------------------------------------------------
+
+vor();
+nimm();
+gib();
+linksUm();
+
+=>Verhalten bzw. Methoden
+
+----------------------------------------------------
+
+Was passiert, wenn der Hamster einen Schritt vorwärts macht?
+
+->Hamster bewegt sich und ändert die Eigenschaften für die Position.
+
+Das Verhalten hat Einfluss auf die Attributwerte der Objekte.
+
+----------------------------------------------------
+
+Neu: es kann mehr als einen Hamster geben
+->Es muss irgendeine Anweisung geben, die neue Hamster erzeugt
+
+new
+
+->wir muessen den Hamstern "Namen" geben
+damit wir diese voneinander unterscheiden koennen
+
+Objektvariablen
+
+->neue Hamster muessen durch irgendeine Anweisung im Territorium
+plaziert werden können
+
+init
+
+----------------------------------------------------
+
+Hamster = Klassendatentyp
+
+Hamster facepalm = Hamster.getStandardHamster();
+
+facepalm . vor();
+
+----------------------------------------------------
+
+Datentyp
+	->Speicherplatz 
+	->Wie muss der Computer die Folge von 0 und 1 interpretieren
+	->Welche Operationen koennen mit der Variablen ausgefuehrt werden?
+	
+Variablen vom Typ Hamster
+	->Lebensdauer
+	->Gültigkeitsbereich
+	
+	
+Hamster paul; //globale Variable
+
+void main(){
+	paul = Hamster.getStandardHamster();
+}
+
+Gültigkeitsbereich
+
+main(){			void prozedur(){
+ paul --------> ...
+ ...
+		<--------
+				}
+}
+
+Lebensdauer
+Eine Variable "stirbt" wenn der Anweisungsblock in 
+dem sie definiert wurde verlassen wird.
+
+null : "nichts"
+
+Hamster paul = Hamster.getStandardHamster(); //für den StandardHamster zusaetzlichen Namen vergeben
+paul = null; //ueber paul ist der Standardhamster nicht mehr erreichbar da nicht referenziert wird
+
+paul = new Hamster();
+paul = null; //Der Name paul referenziert nichts mehr
+
+
+
+
+paul = new Hamster();
+paul = new Hamster();
+                ^   ^
+paul - - - - > (.___.) blauer Hamster
+ |              ^   ^  
+ +-----------> (.___.) gruener Hamster
+

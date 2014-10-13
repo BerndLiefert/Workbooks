@@ -1,0 +1,234 @@
+OOP
+
+Klasse Hamster
+
+->Klassen sind Bauplaene
+->beschreiben welche Eigenschaften und welches Verhalten Objekte der Klasse besitzen
+
+class Hamster{
+
+	Eigenschaften: Variablen, Konstanten
+
+	Verhalten: Methoden (Prozeduren oder Funktionen)
+
+}
+
+
+========================================================
+
+Klassennamen beginnen mit einem Groﬂbuchstaben
+
+class EigeneKlasse{
+
+Eigenschaften
+
+------------------
+
+Verhalten
+
+
+}
+
+
+========================================================
+
+class Hamster{
+
+	//Eigenschaften
+	int blickrichtung;
+	int spalte;
+	int reihe;
+	int anzahlKoerner;
+	int farbe;
+
+
+	//Verhalten
+	void linksUm(){
+	...
+	}
+
+	void nimm(){
+	...
+	}
+	
+	void vor(){
+	...
+	}
+
+
+	boolean vornFrei(){
+	...
+	return ...
+	}
+
+	boolean kornDa(){
+	...
+	return ...
+	}
+
+
+
+}
+
+
+
+
+void linksUm(){
+		
+		0
+
+		^
+		|
+		|
+		|
+	3 <-----------> 1
+		|
+		|
+		|
+		V	
+		
+		2
+
+	blickrichtung = (blickrichtung + 3) % 4;
+
+N = 0 + 3 = 3 % 4 = 3 = W
+O = 1 + 3 = 4 % 4 = 0 = N
+S = 2 + 3 = 5 % 4 = 1 = 0
+W = 3 + 3 = 6 % 4 = 2 = S
+
+
+}
+
+
+Objekt . Methode()
+Objekt . Attribut
+
+
+
+
+==========================================
+
+class Hamster{
+
+	void vor(){
+
+		if(this.blickrichtung == 0){
+			
+			this.reihe = this.reihe - 1; //Pr¸fen: Reihe > 0
+			
+		}
+		
+		if(this.blickrichtung == 2){
+
+			this.reihe = this.reihe + 1;
+		
+		}
+		if(this.blickrichtung == 1){
+
+			this.spalte = this.spalte + 1;	
+		
+		}
+		if(this.blickrichtung == 1){
+
+			this.spalte = this.spalte - 1;	
+		
+		}
+
+		
+
+
+	}
+
+}
+
+
+
+==================================================
+
+Kapitel 4 Aufgabe 5
+
+Hamster paul
+0 Reihe
+8 Spalte
+0 Blickrichtung
+4 Koerner
+
+
+Hamster heidi
+0 Reihe
+6 Spalte
+2 Blickrichtung
+7 Koerner
+
+
+==================================================
+
+
+			 +---- Parameter ist eine Objektvariable(Name, Referenz) vom Typ "Hamster"
+			 |
+                         v
+void rechtsUm(Hamster name){
+	name.linksUm();
+	name.linksUm();
+	name.linksUm();
+}
+
+
+void main() {
+
+	Hamster paul = Hamster.getStandardHamster();
+    
+    rechtsUm(paul);
+}
+
+==================================================
+
+
+Erweitern von Klassen mit extends
+
+class meinHamster extends Hamster{
+
+	void rechtsUm(){
+
+		this.linksUm();
+		this.linksUm();
+		this.linksUm();
+
+	}
+
+
+}
+
+
+grundsaetzlich
+
+Klasse 	:	Datei
+1	:	1
+
+Klassennamen beginnen mit einem Groﬂbuchstaben
+
+Eigenschaften und Verhalten beginnen mit Kleinbuchstaben, dann aber Camel-Case
+
+in JAVA
+Sowohl Klasse als auch das Programm uebersetzen
+
+
+
+
+====================================================
+
+fluent interface
+
+int reihe = Hamster.getStandardHamster().getReihe();
+
+
+
+
+
+
+
+ 
+
+
+
+

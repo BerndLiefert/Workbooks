@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+
+<title>Workbook</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/menu.css">
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+
+
+</head>
+<body>
+
+<a href="https://github.com/BerndLiefert" target="_blank"><img src="files/forkme.png" id="forkme" alt="forkme"></a>
+
+
+	<div id="wrapper">
+	
+	
+	<div id="header">
+		<h1 id="sitename">Java - Grundlagen</h1>
+		<h2 id="siteslogan">Death to all Hipsters!</h2>
+	</div>	
+	
+	<div id="navigation">
+		<nav>	
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Grundlagen</a>
+			
+				<ul>
+					<li><a href="#netbeans">Netbeans</a></li>
+					<li><a href="#zugriffsrechte">Zugriffsrechte</a></li>
+					<li><a href="#">Subitem1</a></li>
+				</ul>
+			
+			</li>		
+		</ul>
+	
+		</nav>
+	
+	
+	</div>	
+	
+	<div id="content">
+	
+	
+	
+	<article class="topic">
+	<h2 class="header"><a id="netbeans">Netbeans</a></h2>
+	<p>
+	[F7] - Debug Modus Starten
+	</p>
+	<p>
+	[F8] - Einzelschritt(JDK &uuml;berspringen)
+	</p>
+	<p>
+	Im JDK<br>
+	[Umschalt] + [F7] - Step into next Method 
+	</p>
+	<p>
+	Debug Modus verlassen<br>
+	[Umschalt] + [F5]
+	</p>
+	
+	<p>
+	Autovervollst&auml;ndigung<br>
+	[Strg] + [Leertaste]
+	</p>
+	
+	
+	</article>
+	
+	
+	
+	<article class="topic">
+	<h2 class="header"><a id="zugriffsrechte">Zugriffsrechte und Pakete (packages)</a></h2>
+	
+	<p>
+	<span class="keyword">private</span><br>
+	nur innerhalb der Klasse kann auf die Eigenschaft oder die Methode zugegriffen werden
+	
+	
+	</p>
+	<p>
+	<span class="keyword">protected</span><br>
+	Zugriff ist innerhalb der Vererbungshierachie erlaubt<br>
+	<span class="blue">aber:</span> in Java haben auch alle Klassen des gleichen
+	Paketes Zugriff auf protected-Elemente
+	</p>
+	<img src="files/zugriffsrechte/uebersicht1.png" alt="uebersicht1">
+	
+	<p>
+	<span class="keyword">public</span><br>
+	&ouml;ffentlich, Zugriff ist von "&uuml;berall" aus m&ouml;glich
+	<br>
+	&lt;none&gt;<br>
+	alle Klassen des gleichen Pakets haben Zugriff
+	</p>
+	
+	<h3>Pakete</h3>
+	<p>
+	Pakete dienen dem strukturieren von Quellen und dem "Sauberhalten" des Namenraumes
+	</p>
+	
+	<p>
+	Pakete / Klassen aus fremden Quellen k&ouml;nnen importiert werden
+	</p>
+	
+	Alle Klassen aus einem Paket
+	<p>
+	<span class="keyword">import</span> Paket.*;
+	</p>
+	
+	eine Klasse aus einem Paket
+	<p>
+	<span class="keyword">import</span> Paket.Klasse;
+	</p>
+	
+	<p>
+	Pakete werden auf Verzeichnisstrukturen gemappt
+	</p>
+	
+	
+	<p>
+	Pakete d&uuml;rfen weiter unterteilt werden (Subpakete)
+	</p>
+	
+	<p>
+	um einen weltweiten Austausch von Paketen zu vereinfachen, verwendet man f&uuml;r Paketnamen &uuml;blicherweise Domainnamen
+	</p>
+	
+	<p>
+	www.steve72.de
+	<ul class="myul">
+	<li>de.steve72.java</li>
+	<li>de.steve72.java.patterns</li>
+	<li>de.steve72.java.patterns.creation</li>
+	</ul>
+	<p>
+	
+	<h3>Aufgabe 1</h3>
+	<p>
+	BubbleSort
+	<ul class="myul">
+		<li>10 verschiedene Werte (Array) optional Zufallszahlen</li>
+		<li>BubbleSort als Klasse</li>
+		<li>von der Hauptklasse aus soll das Feld erzeugt, sortiert, ausgeben werden</li>
+		<li>Hauptklasse
+			<ol class="myol">
+		
+				<li>Array erzeugen (feld)</li>
+				<li>BubbleSortKlasse.sortieren (feld)</li>
+				<li>... . ausgeben(feld)</li>
+			</ol>
+		</li>
+	</ul>
+	
+	</p>
+	
+	</article>
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Ende #wrapper -->
+	</div>
+<span id="copy">CC0 2014 by Bernd Liefert</span>
+</body>
+</html>

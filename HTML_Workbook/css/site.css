@@ -1,0 +1,65 @@
+body{
+margin:0;
+padding:0;
+}
+#wrapper{
+width:800px;
+margin:0 auto;
+font-family:Tahoma;
+}
+
+header, footer{
+background:gray;
+height:128px;
+position:relative;
+padding:10px;
+}
+
+#sitetitle{
+color:white;
+margin:0;
+padding:0;
+
+}
+
+#copyright{
+position:absolute;
+bottom:10px;
+right:10px;
+color:white;
+}
+.clear{
+clear:both;
+}
+
+#layoutpix{
+float:left;
+margin:10px;
+}
+.simplelist{
+list-style-type:none;
+}
+
+article{
+position:relative;
+}
+.backlink{
+position:absolute;
+top:10px;
+right:10px;
+}
+
+/*Tabellen*/
+table{
+border:1px solid black;
+width:100%;
+}
+
+td, th{
+border:1px solid black;
+padding:10px;
+}
+
+td{
+vertical-align:top;
+}

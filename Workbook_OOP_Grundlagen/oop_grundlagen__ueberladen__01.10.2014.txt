@@ -1,0 +1,293 @@
+OOP - Ueberladen von Methoden
+
+
+Aufgabe: Der Hamster soll bis zur naechsten Wand laufen.
+
++ naechsteWand()
+
+Aufgabe: Der Hamster soll bis zur naechsten Wand laufen und auf jeder Kachel ein Koern ablegen
+
++ naechsteWandUndKorn()
+
+...
+
++ ...
+
+=========================================================================
+
+(1) naechsteWand()
+
+(2) naechsteWand(int gap)
+
+(3) naechsteWand(int gap, int anzahl)
+
+----------->#
+
+-.-.-.-.-.-># gap=1
+
+--.--.--.--># gap=2
+
+-...-...-...->#gap=1 anzahl=3
+
+
+
+Unter ueberladen von Methoden versteht man, die Methoden haben den gleichen Namen, sie unterscheiden 
+sich aber in der Anzahl und/oder Typ der Parameter.
+
+
+Zu vermeiden:
+naechsteWand(int, float)
+naechsteWand(float, int)
+
+
+
+
+=========================================================================
+
+Konstruktoren
+
+Konstruktoren sind Methoden einer Klasse, die
+
+	(1) den Namen der Klasse tragen
+	(2) beim Erzeugen neuer Objekte automatisch aufgerufen werden
+								|
+								+----->	sie werden zum Initialisieren d. neuen Objekte verwendet
+									|
+									+----->	der Entwickler der Klasse uebernimmt die 
+										Verantwortung fuer das Initialisieren des Objektes
+
+
+Die Konstruktoren MeinHamster haben keinen Datentyp
+
+class MeinHamster{
+
+	MeinHamster(){
+
+		//initialisieren
+	
+	}
+
+
+	MeinHamster(int r, int s, int b, int a){
+
+	
+	
+	}
+
+
+
+
+}
+
+
+
+=========================================================================
+
+
+Tipp: Konstruktoren durch eigene Methoden ersetzen
+
+
+class
+
+		Konstruktor1 <---- ( Methode1 ) ----> App
+		|
+	     	|
+	Eigenschaften--Konstruktor2
+		|
+		|
+		Konstruktor3
+
+Trennen Sie die Objekterzeugung von der Applikation ab.
+
+	+-----+
+	| APP |
+	+-----+
+       	   ^
+	   |
+	   v	
+	+---------------+
+	| Fabrikmethode |
+	+---------------+
+	   ^
+	   |
+	   v
+	+--------+
+	| Objekt |
+	+--------+
+
+
+=========================================================================
+
+Klassenattribute / Klassenmethoden
+
+-Attribute sind Eigenschaften eines Objektes (Farbe: Blau, Rot, Gelb)
+
+-Klassenattribut ist eine gemeinsame Eigenschaft aller Objekte einer Klasse
+
+=>alle Objekte einer Klasse können auf diese Eigenschaft zugreifen
+
+Beispiel:
+
+>(:>o   --+
+          |
+>(:>o   --+ Anzahl gesammelte Koerner aller Hamster
+          | 
+>(:>o   --+
+
+
+Klassenattribute werden mit dem Schluesselwort static deklariert/definiert
+
+
+class MeinHamster extends Hamster{
+
+	int alleinGesammelteKoerner = 0;	//Instanzattribut
+...
+	static int gesammelteKoernerGesamt = 0;	//Klassenattribut
+...
+
+	void sammle(){
+
+	MeinHamster.gesammelteKoernerGesamt++;
+
+	}
+
+}
+
+Wenn wir auf Klassenattribute zugreifen wollen muss der Klassenname voran geschrieben werden:
+MeinHamster . gesammelteKoernerGesamt++;
+    ^                   ^
+    |			|
+Klassenname	Klassenattribut
+
+
+
+
+
+=========================================================================
+Klassenmethode
+
+Klassenmethoden werden ebenfalls mit dem Schluesselwort static deklariert
+Klassenmethoden sind unabhaengig von Objekten verwendbar
+	|
+	+--> der Aufruf der Klassenmethoden erfolgt ueber Angabe des Klassennamens
+		|
+		+-->Klasse.Methode(), z.B. Hamster.getStandardHamster()
+
+  _______
+ /|     /|
+/ |    / |
++-----+  |
+| |___|__|
+| /   | /
+|/    |/
++-----+
+
+
+
+Klassenmethoden duerfen nur auf (statische) Klassenattribute zugreifen
+	|
+	+--->Grund: eine statische Methode kann unabhaengig von Objekten aufgerufen werden
+
+
+Falsch:
+
+static int getGemeinsamGesammelteKoerner(){
+
+	int fehler = this.alleineGesammelteKoerner;   <---- !
+
+	return MeinHamster.gemeinsamGesammelteKoerner;
+
+}
+
+
+
+=========================================================================
+
+
+Territorium.getAnzahlSpalten() : int "Wie groß ist das Territorium?"
+Territorium.getAnzahlReihen() : int
+
+
++-----------+
+|:>       :>|
+|           |
+|           |
+|           |
+|:>       :>|
++-----------+
+
+Territorium.getAnzahlHamster(r, s) : int "Wie viele Hamster stehen auf der Kachel?"
+Territorium.getAnzahlHamster() : int "Wie viele Hamster gibt es im Territorium?"
+
+
+Territorium.mauerDa(r, s) : boolean "Befindet sich an den Koordinaten eine Mauer?"
+
+linksFrei();
+rechtsFrei();
+
+Territorium.getAnzahlKoerner(r, s) : int "Wie viele Koerner liegen auf der Kachel?"
+Territorium.getAnzahlKoerner() : int "Wie viele Koerner liegen im Territorium?"
+
+
+S : Spalte
+R : Reihe
+HS : HamsterSpalte
+HR : HamsterReihe
+
+	N
+        ^
+        |
+        |
+W <-----+-----> O
+        |
+        |
+        v
+	S
+
+	N	|	O	|	S	|	W
+	S=HS-1		S=HS		S=HS+1		S=HS
+	R=HR		R=HR-1		R=HR		R=HR+1
+
+
+
+
+=========================================================================
+
+Subobjekte
+
+Die Klasse Hamster betrachten wir auch als Datentyp
+Datentypen koennen zum Deklarieren/Definieren neuer Variablen verwendet werden
+(1) lokal
+(2) global
+(3) in Klasse ---> Objekte koennen Eigenschaften von anderen Objekten sein
+
+
+=========================================================================
+
+Konstanten
+
+Klasse.KONSTANTE
+
+
+=========================================================================
+
+1) Zielkoordinaten des blauen Hamsters 
+rb, sb
+
+2.1) gruenen Hamster erzeugen
+
+2.2) gruenen Hamster zur Reihe rb laufen lassen
+
+2.3) gruenen Hamster zur Spalte sb laufen lassen
+
+2.2.1) Reihenabstand berrechnen deltar = rg - rb
+
+2.2.2) "Richtig" hindrehen
+
+deltar == 0  / keine Drehung notwendig
+deltar > 0   / Hamster.NORD
+delta  < 0   / Hamster.SUED
+
+2.2.3) deltar SChritte vorwaerts
+
+

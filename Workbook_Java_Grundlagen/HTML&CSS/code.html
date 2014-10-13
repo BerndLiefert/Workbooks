@@ -1,0 +1,84 @@
+<!Doctype html>
+<html>
+<head>
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function replace(){
+
+var input = $('#input').val();
+
+
+input = input.replace(/ /g, "&nbsp;");
+
+input = input.replace(/class/g, '<span class="keyword">class</span>');
+
+
+input = input.replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+
+
+//Comments ---------------------------------
+var comments = input.match("//.*\n", "g");
+
+console.log(comments);
+
+
+for(var i = 0; i < comments.length; i++){
+
+var pattern = new RegExp(comments[i], 'g');
+
+input = input.replace(pattern, '<span class="comment">' + comments[i] + '</span>');
+
+}
+
+//-----------------------------------------------
+
+
+
+
+input = input.replace(/\n/g, "<br>");
+
+var keywords = ["void", "function", "int", "boolean", "static", "public", "this", "extends", "interface"];
+
+for(var i = 0; i < keywords.length; i++){
+
+var pattern = new RegExp(keywords[i], 'g');
+
+input = input.replace(pattern, '<span class="keyword">' + keywords[i] + '</span>');
+
+}
+
+
+
+
+
+
+$('#output').text(input);
+
+$('#preview').append(input);
+
+
+}
+
+
+
+</script>
+</head>
+<body>
+
+<textarea id="input"></textarea>
+
+
+<button onclick="javascript:replace();">uebersetze</button>
+&lt;div class="mycode"&gt;<span id="output"></span>&lt;/div&gt;
+
+<div id="preview" class="mycode">
+
+</div>
+
+</body>
+
+</html>

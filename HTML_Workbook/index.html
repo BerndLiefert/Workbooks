@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Site</title>
+
+<meta name="author" content="Bernd Liefert">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+
+<link rel="stylesheet" type="text/css" href="css/site.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/site.js"></script>
+
+</head>
+<body>
+<div id="wrapper">
+<header><h1 id="sitetitle">HTML & CSS Grundlagen</h1></header>
+
+
+
+
+<nav>
+<h1><a id="Inhalt">Inhalt:</a></h1>
+<ol>
+<li><a href="#Grundlagen">Grundlagen</a></li>
+<li><a href="#Aufbau">Aufbau</a></li>
+<li><a href="#Ueberschriften">&Uuml;berschriften</a></li>
+<li><a href="#BlockundInline">Block- und Inlineelemente</a></li>
+<li><a href="#Absatz">Ab&auml;tze und Abschnitte</a></li>
+<li><a href="#Inlineelemente">Inlineelemente</a></li>
+<li><a href="#Standalonetag">Standalone-Tag</a>
+	<ol>
+		<li><a href="#Umlaute">Umlaute</a></li>
+	</ol>
+	</li>
+<li><a href="#Kommentare">Kommentare</a></li>
+<li><a href="#Listen">Listen</a></li>
+<li><a href="#Layout">Layout</a></li>
+<li><a href="#Bilder">Bilder in HTML</a></li>
+<li><a href="#Hyperlinks">Hyperlinks</a>
+<ol>
+		<li><a href="#Anker">Anker</a></li>
+	</ol>
+</li>
+<li><a href="#Tabellen">Tabellen</a></li>
+<li><a href="#Formulare">Formulare</a></li>
+<li><a href="#CSS">CSS</a></li>
+<li><a href="#Selektoren">CSS Selektoren</a></li>
+<li><a href="#Pseudoelemente">Pseudoelemente</a></li>
+<li><a href="#Dokumententypen">Dokumententypen</a></li>
+<li><a href="#Boxmodell">CSS-Boxmodell</a></li>
+<li><a href="#Meta">Daten im Kopfbereich (Meta)</a></li>
+<li><a href="#Dreamweaver">Dreamweaver</a></li>
+</ol>
+</nav>
+<main>
+
+
+
+<article>
+<h1><a id="Grundlagen">HTML Grundlagen</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+
+HTML - <u>H</u>yper<u>t</u>ext <u>M</u>arkup <u>L</u>anguage
+<ul>
+<li>Dokumentenbeschreibungssprache</li>
+<li>alles unformatierter Text</li>
+<li>Layout der Seiten bestimmen</li>
+<li>Sturkturieren</li>
+<li>Bilder/Grafiken einbiden (Informationen wo Bilder stehen)</li>
+<li>Verlinkungen zu anderen Seiten</li>
+</ul>
+
+<!-- Kommentar -->
+<hr>
+
+</article>
+
+<article>
+<h1><a id="Aufbau">Aufbau eines HTML-Dokumentes</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+
+&#60;html&#62;
+<br>
+&#60;head&#62;
+<br>
+&#60;title&#62;Titel der Webseite&#60;&#47;title&#62;
+<br>
+Beschreibung der HTML-Seite
+<br>
+&#60;&#47;head&#62;
+<br>
+&#60;body&#62;
+<br>
+Anzeigebereich im Browser
+<br>
+<!-- Kommentar -->
+&#60;&#33;&#45;&#45; Ich bin ein Kommentar und werde nicht angezeigt &#45;&#45;&#62;
+<br>
+&#60;&#47;body&#62;
+<br>
+&#60;&#47;html&#62;
+
+<h2>Hinweis:</h2>
+Jede Webseite beginnt mit index.html oder index.html
+<br>
+Zeilenumbr&uuml;che im Quellcode bewirken keinen Zeilenumbr&uuml;che im Browser.
+<br>
+
+<!-- Kommentar -->
+<hr>
+</article>
+<article>
+
+<h1><a id="Ueberschriften">&Uuml;berschriften</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+&#60;h1&#62;&Uuml;berschrit 1. Ordnung&#60;&#47;h1&#62;
+<br>
+&#60;h2&#62;&Uuml;berschrit 2. Ordnung&#60;&#47;h2&#62;
+<br>
+&#60;h3&#62;&Uuml;berschrit 3. Ordnung&#60;&#47;h3&#62;
+<br>
+&#60;h4&#62;&Uuml;berschrit 4. Ordnung&#60;&#47;h4&#62;
+<br>
+&#60;h5&#62;&Uuml;berschrit 5. Ordnung&#60;&#47;h5&#62;
+<br>
+&#60;h6&#62;&Uuml;berschrit 6. Ordnung&#60;&#47;h6&#62;
+<br>
+<br>
+<div class="box">
+<span class="info">So sieht es aus:</span>
+<h1>&Uuml;berschrit 1. Ordnung</h1>
+<h2>&Uuml;berschrit 1. Ordnung</h2>
+<h3>&Uuml;berschrit 1. Ordnung</h3>
+<h4>&Uuml;berschrit 1. Ordnung</h4>
+<h5>&Uuml;berschrit 1. Ordnung</h5>
+<h6>&Uuml;berschrit 1. Ordnung</h6>
+</div>
+
+<!-- Kommentar -->
+<hr>
+</article>
+<article>
+
+
+<h1><a id="BlockundInline">Block- und Inlineelemente</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+<table>
+<thead>
+<tr>
+<th>Blockelemente</th>
+<th>Inlineelemente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><ul>
+ <li>gehen &uuml;ber die gesamte Browserbreite</li>
+ <li>erzeugen einen Zeilenumbruch im Browser</li>
+ <li>gef&uuml;hlte Leerzeile</li>
+</ul></td>
+<td><ul><li>f&uuml;gen sich in den Textfluss ein</li></ul></td>
+</tr>
+</tbody>
+</table>
+
+<!-- Kommentar -->
+<hr>
+</article>
+<article>
+
+<h1><a id="Absatz">Abs&auml;tze</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+&#60;p&#62;Absatztext&#60;&#47;p&#62;!Semantik
+<br>
+&#60;div&#62;Text&#60;&#47;div&#62;
+<ul>
+<li>p (Paragraph) erzeugt einen Zeilenumbruch + Leerzeile</li>
+<li>div (Division) erzeugt einen Zeilenumbruch ohne Leerzeile</li>
+</ul>
+<br>
+<br>
+<div class="box">
+<span class="info">So sieht es aus:</span>
+<br>
+<p>Ich bin ein Paragraph</p>
+<p>Ich bin ein Paragraph</p>
+<p>Ich bin ein Paragraph</p>
+<br>
+<div>Ich bin ein Division</div>
+<div>Ich bin ein Division</div>
+<div>Ich bin ein Division</div>
+</div>
+
+<!-- Kommentar -->
+<hr>
+</article>
+<article>
+
+
+<h1><a id="Inlineelemente">Inlineelemente</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+
+&#60;strong&#62;(strong) fette Schrift&#60;&#47;strong&#62;bessere Betonung im Browser bei Leseger&auml;ten
+<br>
+&#60;b&#62;(bold) fette Schrift&#60;&#47;b&#62;
+<br>
+<br>
+<div class="box">
+<span class="info">So sieht es aus:</span>
+<br>
+<strong>strong</strong>
+<br>
+<b>bold</b>
+</div>
+<br>
+&#60;em&#62;(emphasis = Betonung) kursive Schrift&#60;&#47;em&#62;
+<br>
+&#60;i&#62;(italic) kursive Schrift&#60;&#47;i&#62;
+<br>
+<br>
+<div class="box">
+<span class="info">So sieht es aus:</span>
+<br>
+<em>emphasis</em>
+<br>
+<i>italic</i>
+</div>
+<br>
+<br>
+&#60;u&#62;(underline) unterstrichene Schrift&#60;&#47;u&#62;
+<br>
+<br>
+<div class="box">
+<span class="info">So sieht es aus:</span>
+<br>
+<u>underline</u>
+<br>
+<h3>Hinweis: Unterstrichene W&ouml;rter k&ouml;nnen f&uuml;r Links gehalten werden!</h3>
+</div>
+<br>
+<br>
+
+<!-- Kommentar -->
+<hr>
+</article>
+<article>
+
+<h1><a id="Standalonetag">Standalone-Tag</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+Standalone-Tags stehen f&uuml;r sich alleine
+<br>
+<br>
+&#60;br&#62; bewirkt Zeilenumbruch im Absatz
+<br>
+&#38;nbsp; (Non-Breaking Space) ein Leerzeichen
+<h2 class="silver"><a id="Umlaute">Umlaute</a></h2>
+&#38uml; bzw. &#38Uml; - &uuml;/&Uuml;
+<br>
+&#38auml; - &auml;
+<br>
+&#38ouml; - &ouml;
+<br>
+<br>
+&#60;hr&#62; - horizontale Linie
+<br>
+
+<!-- Kommentar -->
+<hr>
+</article>
+<article>
+
+<h1><a id="Kommentare">Kommentare</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+<ul>
+<li>auskommnentieren</li>
+<li>zur Dokumentation</li>
+<li>nicht im Browser sichtbar</li>
+</ul>
+<br>
+&#60;&#33;&#45;&#45; Ich bin ein Kommentar und werde nicht angezeigt &#45;&#45;&#62;
+
+<!-- Kommentar -->
+<hr>
+</article>
+<article>
+
+<h1><a id="Listen">Listen</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+ungeordnete Liste
+<br>
+<br>
+&#60;ul&#62;
+<br>
+ &#60;li&#62;List Item&#60;&#47;li&#62;<br>
+ &#60;li&#62;List Item&#60;&#47;li&#62;<br>
+ &#60;li&#62;List Item&#60;&#47;li&#62;<br>
+&#60;&#47;ul&#62;<br>
+<br>
+geordnete Liste
+<br>
+<br>
+&#60;ol&#62;<br>
+ &#60;li&#62;List Item&#60;&#47;li&#62;<br>
+ &#60;li&#62;List Item&#60;&#47;li&#62;<br>
+ &#60;li&#62;List Item&#60;&#47;li&#62;<br>
+&#60;&#47;ol&#62;<br>
+<br>
+
+<div class="box">
+<span class="info">So sieht es aus:</span>
+<br>
+ungeordnete Liste
+<br>
+<ul>
+ <li>List Item</li>
+ <li>List Item</li>
+ <li>List Item</li>
+</ul>
+<br>
+geordnete Liste
+<br>
+<ol>
+ <li>List Item</li>
+ <li>List Item</li>
+ <li>List Item</li>
+</ol>
+</div>
+
+
+<!-- Kommentar -->
+<hr>
+</article>
+<article>
+
+<h1><a id="Layout">Layout</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+<img id="layoutpic" src="files/images/layout.png" alt="layout">
+<ul class="simplelist">
+<li>header - Kopfbereich</li>
+<li>nav - Navigation</li>
+<li>main - Hauptteil/Content</li>
+<li>footer - Fu&szlig;bereich</li>
+</ul>
+<div class="clear"></div>
+</article>
+
+<!-- Kommentar -->
+<hr>
+
+<article>
+<h1><a id="Bilder">Bilder in HTML</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+<ul>
+ <li>Schmuckelemente: Rahmen, Logos, Symbole</li>
+ <li>Inhaltsunterst&uuml;tzung: Themenbilder</li>
+ <li>Werbebanner (Links)</li>
+ <li>Dateitypen: *.jpg, *.png (png24), *.gif</li>
+</ul>
+<br>
+Ziel: Bilder so klein wie m&ouml;glich
+<br>
+Muster Kacheln, Ausschnitte
+<br>
+Aufl&ouml;sung der Bilder 72ppi (pixel pro inch)
+<br>
+<br>
+Einbindung: 
+<br>
+&lt;figure&gt&lt;img src="bilder/bild.png" alt="bild" title="bild" width="400" height="300"
+<br>
+&lt;figcaption&gtBildunterschrift&lt;/figcaption&gt&lt;/figure&gt;
+<br>src = source
+<br>alt = alternative text
+<br>title = hover text
+<div class="box">
+<span class="info">So sieht es aus:</span>
+<br>
+<figure><img src="files/images/example.png" alt="bild" title="bild"><figcaption>Example Picture</figcaption></figure>
+<br>
+<br>
+height="30" width="100"
+<br>
+<br>
+<img src="files/images/example.png" alt="bild" title="bild" height="30" width="100">
+
+<br>
+</div>
+
+
+</article>
+
+
+
+
+
+
+<!-- Kommentar -->
+<hr>
+
+<article>
+<h1><a id="Hyperlinks">Verlinkungen in HTML</a></h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+<ul>
+<li>auf der Webseite navigieren</li>
+<li>auf andere Webseiten verweisen</li>
+<li>Verkn&uuml;pfung relativ zum Dokument</li>
+<li>Beschriftung kurz und b&uuml;ndig</li>
+<li>keine Sterotypen verwenden, wie z.B.: <u>hier klicken</u> <u>mehr</u></li>
+<li>Wort Link am Anfang vermeiden, wg. Screenreadern</li>
+<li>Links nicht zu dicht nebeneinander</li>
+</ul>
+Einbindung:
+<br>
+&lt;a href="index.html" title="Beschreibung"&gt;Home&lt;a&gt; 
+
+<div class="box">
+<span class="info">So sieht es aus:</span>
+<br>
+interner Link (relative Pfadangabe)
+<br>
+<a href="index.html" title="HTML Grundlagen">HTML Grundlagen</a>
+<br>
+externer link
+<br>
+<a href="http://www.google.de/" target="blank">google.de</a>
+<h3>Hinweis: Inlineelemente werden nie um Blockelemente verschachtelt!</h3>
+FALSCH: &lt;a href="index.html"&gt;&lt;li&gt;Home&lt;/li&gt;&lt;/a&gt;
+<br>
+RICHTIG: &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+</div>
+Verlinkung mit sich selbst:
+&lt;a href="#"&gt;Link auf die aktuelle Seite&lt;/a&gt;
+<br>
+Verlinkung zu externen Seiten:
+&lt;a href="http://www.google.de/" target="blank"&gt;google.de&lt;/a&gt;
+<br>
+target: Ziel in dem die Seite ge&ouml;ffnet wird, blank = neues Fenster/Tab und self = im selben Fenster/Tab &ouml;ffnen
+<br>
+<br>
+<h2 class="silver"><a id="Anker">Verlinkungen im gleichen Dokument</a></h2>
+Anker (Ziel): &lt;a id="Absatz1" &gt;&lt;h1&gt;Absatz1&lt;/h1&gt;&lt;/a&gt;
+<br>
+Link zu diesem Anker: &lt;a href="#Absatz1" &gt;Absatz1&lt;/a&gt;
+<h3>Hinweis: Das name-Attribut im a Tag ist nicht mehr W3C-Konform f&uuml;r HTML5!</h3>
+
+
+
+</article>
+
+
+<hr>
+
+<article>
+<h1><a id="Tabellen"></a>Tabellen</h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+<ul>
+	<li>unbegrenzte Menge an Spalten und Zeilen beinhalten</li>
+	<li>sollen nur "Tabellendaten" aufgenommen werden</li>
+	<li>Tablellenkopfzeilen k&ouml;nnen enthalten sein</li>
+</ul>
+Einbindung:
+<br>
+&lt;table&gt;
+<br>
+&lt;caption&gt;Tabellen&uuml;berschrift&lt;/caption&gt;
+<br>
+&lt;thead&gt;
+<br>
+&lt;tr&gt;
+<br>
+&nbsp;&nbsp;&lt;th colspan="2"&gt;Tabellenkopf&lt;/th&gt;
+<br>
+&lt;/tr&gt;
+<br>
+&lt;/thead&gt;
+<br>
+&lt;tbody&gt;
+<br>
+&lt;tr&gt;
+<br>
+&nbsp;&nbsp;&lt;td&gt;Tabelleninhalt&lt;/th&gt;
+<br>
+&nbsp;&nbsp;&lt;td&gt;Tabelleninhalt&lt;/th&gt;
+<br>
+&lt;/tr&gt;
+<br>
+&lt;tr&gt;
+<br>
+&nbsp;&nbsp;&lt;td&gt;Tabelleninhalt&lt;/th&gt;
+<br>
+&nbsp;&nbsp;&lt;td&gt;Tabelleninhalt&lt;/th&gt;
+<br>
+&lt;/tr&gt;
+<br>
+&lt;/tbody&gt;
+<br>
+&lt;tfoot&gt;
+<br>
+&lt;tr&gt;
+<br>
+&nbsp;&nbsp;&lt;td&gt;Tabelleninhalt&lt;/th&gt;
+<br>
+&nbsp;&nbsp;&lt;td&gt;Tabelleninhalt&lt;/th&gt;
+<br>
+&lt;/tr&gt;
+<br>
+&lt;/tfoot&gt;
+<br>
+&lt;/table&gt;
+
+<div class="box">
+<span class="info">So sieht es aus:</span>
+<table>
+<caption>Tabellen&uuml;berschrift</caption>
+	<thead>
+	<tr>
+		<th colspan="2">Tabellenkopf</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Tabelleninhalt</td>
+		<td>Tabelleninhalt</td>
+	</tr>
+	<tr>
+		<td>Tabelleninhalt</td>
+		<td>&nbsp;</td>
+	</tr>
+	</tbody>
+</table>
+<h3>Hinweis: Soll eine Tabellenzelle leer sein muss sie ein Leerzeichen &amp;nbsp; enthalten!</h3>
+</div>
+
+
+</article>
+
+<hr>
+
+<article>
+<h1><a id="Formulare"></a>Formulare</h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+	<ul>
+		<li>Anwender kann in Verbindung treten mit Kundenservice</li>
+		<li>G&auml;steb&uuml;cher, Kontaktformulare, Shops</li>
+		<li>Strukturiertee Ausk&uuml;nfte von Anwendern einholen</li>
+		<li>Suchen in Datenbest&auml;nden</li>
+		<li>Daten in Datenbest&auml;nden eintragen</li>
+		<li>Interaktion wie Bestellungen</li>
+	</ul>
+Regeln:
+<ol>
+	<li>Nur n&ouml;tiges eintragen</li>
+	<li>Datensparsamkeit</li>
+	<li>Teledienst-Datenschutzgesetz (TDDSG)</li>
+	<li><a href="http://www.e-recht24.de/">www.e-recht24.de</a></li>
+</ol>
+Einbindung:
+<br>
+&lt;form action="action.php" method="POST"&gt;
+<br>
+<br>
+&lt;/form&gt;
+<br>
+
+<div class="box">
+<span class="info">So sieht es aus:</span>
+	<form action="action.php" method="POST">
+	<input type="text" name="example">
+	<input type="submit">
+	</form>
+	<h3>Hinweis:</h3>
+	method="POST" Daten werden &uuml;ber den Header gesendet
+	<br>
+	method="GET" Daten werden &uuml;ber die URL gesendet
+</div>
+<form action="#" method="GET">
+	<table>
+	<caption>Formularelemente im &Uuml;berblick</caption>
+		<tr>
+			<td>Label: &lt;label for="mytext"&gt;Textfeldlabel&lt;/label&gt;
+			<br>
+			<b><i>Hinweis: Das input Element ben&ouml;tigt eine id="mytext" damit die Verlinkung funktioniert.</i></b>
+			</td>
+			<td><label for="mytext">Textfeldlabel:</label><input type="text" name="mytext" id="mytext"></td>
+		<tr>
+		<tr>
+			<td>Einzeiliges Textfeld: &lt;input type="text" name="mytext" value="Defaulttext"&gt;
+			<b><i>Hinweis: Das Value Attribut gibt einen Anfangswert an.</i></b>
+			</td>
+			<td><input type="text" value="Defaulttext"></td>
+		<tr>
+		<tr>
+			<td>Mehrzeiliges Textfeld: &lt;textarea name="bemerkungen" readonly&gt;Hier steht ein Text.&lt;/textarea&gt;
+			<br>
+			<b><i>Hinweis: Das Attribut readonly erlaubt keine &Auml;nderung des Textes. Das Attribut disabled deaktiviert
+			die Textarea.</i></b>
+			</td>
+			<td><textarea name="mytextarea" readonly>readonly: Hier steht ein Text.</textarea>
+			<textarea name="mytextarea" disabled>disabled: Hier steht ein Text.</textarea></td>
+		<tr>
+		<tr>
+			<td>Checkboxen: &lt;input type="checkbox" name="newsletter" value="j" checked&gt;</td>
+			<td>Newsletter: <input type="checkbox" checked>
+			<b><i>Hinweis: Checkboxen f&uuml;r Newsletter sollten nie vorausgew&auml;hlt sein!</i></b>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Radiobutton: &lt;input type="radio" name="geschlecht" value="m" checked&gt;
+			<b><i>Hinweis: Radiobutton die zur selben Gruppe geh&ouml;ren m&uuml;ssen das gleiche name Attribut haben.</i></b>
+			</td>
+			<td><input type="radio" name="geschlecht" value="m" checked>m&auml;nnlich
+			<br><input type="radio" name="geschlecht" value="w">weiblich
+			</td>
+		</tr>
+		<tr>
+			<td>Auswahllisten: 
+			<br>
+			&lt;select name="standort" multiple&gt;
+			<br>
+			&lt;option value="Magdeburg" &gt;Magdeburg&lt;/option&gt;
+			<br>
+			&lt;option value="Dessau" selected&gt;Dessau&lt;/option&gt;
+			<br>
+			&lt;option value="Halle" &gt;Halle&lt;/option&gt;
+			<br>
+			&lt;/select&gt;
+			<br>
+			<b><i>Hinweis: Das multiple Attribut wird f&uuml;r Mehrfachauswahlen benutzt. F&uuml;r Mehrfachauswahlen sollten jedoch Checkboxen verwendet werden.</i></b>
+			</td>
+			<td>
+			Einfachauswahl:
+			<br>
+				<select name="standort">
+					<option value="Magdeburg">Magdeburg</option>
+					<option value="Dessau" selected>Dessau</option>
+					<option value="Halle">Halle</option>
+				</select>
+			<br>
+			Mehrfachauswahl (per Umschalt):
+				<select name="standort2" multiple>
+					<option value="Magdeburg">Magdeburg</option>
+					<option value="Dessau" selected>Dessau</option>
+					<option value="Halle">Halle</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Grafikbutton: &lt;input type="image" src="image.png" name="grafik"&gt;</td>
+			<td><input type="image" src="files/images/button.png"></td>
+		</tr>
+		<tr>
+			<td>Button: &lt;button type="button"&gt;klick mich&lt;/button&gt;
+			<br>
+			&lt;input type="button" name="mybutton" value="kick mich"&gt;
+			<br>
+			<b><i>Hinweis: Dieser Button hat keinerlei eigene Funktion. Funktion wird &uuml;ber Programmierung zugewiesen (JavaScript)</i></b>
+			</td>
+			<td><button type="button">klick mich</button></td>
+		</tr>
+		<tr>
+			<td>Resetbutton: &lt;input type="reset" name="reset"&gt;</td>
+			<td><input type="reset" name="reset"></td>
+		</tr>
+		<tr>
+			<td>Submit Button: &lt;input type="submit" value="Absenden"&gt;
+				<br>
+				<i>mit action Attribut verbunden, wenn darauf geklickt wird, werden die Daten an die im action Attribut hinterlegte Datei gesendet.</i>
+			</td>
+			<td><input type="submit" value="Absenden"></td>
+		</tr>
+		<tr>
+			<td>versteckte Formularfelder: &lt;input type="hidden" name="hidden" value="meinwert"&gt;</td>
+			<td><input type="hidden" value="meinwert"></td>
+		</tr>
+		<tr>
+			<td>Passwortfeld: &lt;input type="password" value="geheim" name="password"&gt;</td>
+			<td><input type="password" value="geheim"></td>
+		</tr>
+		<tr>
+			<td>Dateiupload: &lt;input type="file" name="upload"&gt;</td>
+			<td><input type="file"></td>
+		</tr>
+		<tr>
+			<td><b>HTML5 Formularelemente:</b> &lt;input type="email" name="email" required&gt;
+			<br>
+			<b><i>Hinweis: Das required Attribut ist f&uuml;r Pflichtfelder geeignet.</i></b>
+			</td>
+			<td><label for="email">eMail:</label><input type="email" id="email" name="email" required></td>
+		</tr>
+		<tr>
+			<td><b>HTML5 Formularelemente:</b> &lt;input type="date" name="date"&gt;</td>
+			<td><label for="date">Datum:</label><input type="date" id="date" name="date"></td>
+		</tr>
+	</table>
+</form>
+</article>
+
+<hr>
+
+<article>
+<h1><a id="CSS"></a>CSS</h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+<u>C</u>ascading <u>S</u>tyle <u>S</u>heets
+
+	<ul>
+		<li>Style-Formatvorlage -> gespeicherte Gestaltungsanweisungen</li>
+		<li>Sheet-Blatt Papier, Sammlung</li>
+		<li>Stylesheet-Sammlung von Formatvorlagen f&uuml;r HTML Elemente</li>
+		<li>Cascading-mehrstufige Entscheidungsprozedur</li>
+	</ul>
+	
+	Elementecontainer in HTML werden &uuml;ber Darstellungsanweisungen angesprochen.
+	<br>
+	Anweisungen: Schriftart, Schriftgr&ouml;&szlig;e, Hintergr&uuml;nde, Farben, Abmessungen, Rahmen...
+	<br>
+	<br>
+	CSS:
+	<ul>
+	<li>Trennung von Layout und Inhalt</li>
+	<li>mehr Formatierungsm&ouml;glichkeiten</li>
+	<li>schnelle &Auml;nderung aller Formate</li>
+	<li>einheitliche Darstellung f&uuml;r</li>
+	<li>unterschiedliche Ger&auml;te</li>
+	</ul>
+	Aufbau einer CSS-Regel:
+	<br>
+	<br>Selektor{Eigenschaft:Wert; Eigenschaft2: Wert2; ...}
+	<br>Selector{Property:Value; Property2: Value2; ...}
+	<br>
+	<br>
+	-Selektor steht vor der geschweiften Klammer
+	<br>
+	-w&auml;hlt aus, was formatiert werden soll
+	<br>
+	-Deklaration -> Eigenschafts-Wert-Paar
+	<br>
+	-beschreibt die Gestaltung der Elemente
+	<br>
+	<br>
+	Eigenschaft (property):
+	<br>
+	-steht zuerst da (Farbe, Schriftart -> in englisch)
+	<br>
+	<br>
+	Wert (value):
+	<br>
+	-die zu gestaltene Eigenschaft
+	<br>
+	(Pixelangaben, %-Angaben; Farbangaben mit Farbw&ouml;rtern oder Hexadezimalcode)
+	<br>
+	<br>
+	Kommentare:
+	<br>
+	/* Comment */
+	<br>
+	<br>
+	Einbindung:
+	<br>
+	<br>
+	CSS kann an 3 verschiedenen Stellen im Dokument eingebunden werden.
+	<ol>
+		<li>CSS-Regel in der externen CSS-Datei *.css im head-Bereich mit Hilfe von &lt;link&gt;
+			<ul>
+			<li>&lt;head&gt;<br>&lt;link href="style.css" rel="stylesheet" type="text/css"&gt;<br>&lt;/head&gt;</li>
+			</ul>
+		</li>
+		<li>Zwischen &lt;head&gt; &lt;/head&gt; mit Style-Element
+			<ul>
+			<li>&lt;head&gt;<br>&lt;style type="text/css"&gt;CSS-Regeln&lt;/style&gt;<br>&lt;/head&gt;</li>
+			</ul>
+		</li>
+		<li>Direkt im HTML-Element (Inline-Stil)</li>
+		<ul>
+			<li>&lt;p style="font-size:3em;"&gt;Text&lt;/p&gt;</li>
+		<ul>	
+	</ol>
+	Priorit&auml;t:
+	<br>
+	<h3>Hinweis: die Regel die am dichtesten am Element (zuletzt deklariert) steht gilt!</h3>
+	
+	
+<div class="box">
+<span class="info">So sieht es aus:</span>
+<div style="border:1px solid black; width:200px; height:200px; background:blue; float:right; margin:10px;"></div>
+<p>
+div{
+<br>
+border:1px solid black;
+<br>
+width:200px;
+<br>
+height:200px;
+<br>
+background:blue;
+<br>
+}
+</p>
+
+
+<div class="clear"></div>
+</div>
+
+</article>
+
+
+<hr>
+
+<article>
+<h1><a id="Selektoren"></a>CSS Selektoren</h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+	<ul>
+		<li>Universalselektor, legt die Stilregeln f&uuml;r <b>alle</b> Elemente fest, wird f&uuml;r CSS Reset verwendet
+		<br>
+		<b>Beispiel: *{margin:0; padding:0;}</b> 
+		</li>
+		<li>Tag- oder Typselektor, legt f&uuml;r ein einzelnes HTML-Element Stilregeln fest
+		<br><b>Beispiel: body{font-family:Veranda,Arial,sans-serif;}</b>
+		<h3>Hinweis: Schriftgr&ouml;&szlig;en sollten immer relativ angegeben werden!</h3>
+		Schl&uuml;sselw&ouml;rter: small, medium, large
+		<br>
+		festen Einheiten: Pixel (px)
+		<br>
+		relative Einheiten: %, em
+		<br>
+		<img src="files/images/farben.png" style="border:1px solid black; margin:10px;" alt="farben">
+		</li>
+		<li>Klassenselektor
+			<ul>
+				<li>wird im HTML durch das Attribut class definiert</li>
+				<li>in css-Datei wird der Klassenselektor mit .Klassenname{Eigenschaft:Wert;} angelegt</li>
+				
+			</ul>
+		<b>Beispiel:
+		&lt;p class="myparagraph"&gt;Text&lt;/p&gt;</b>
+		<h3>Hinweis: Klassennamen selbst w&auml;hlbar, keine Sonderzeichen oder Umlaute, darf nicht mit einer Ziffer beginnen, darf mehrfach verwendet werden.</h3>
+		</li>
+		<li>ID-Selektor
+		<ul>
+			<li>wird im HTML mit dem Attribut id angelegt</li>
+			<li>darf nur einmal im Dokument vorkommen</li>
+			<li>frei w&auml;hlbar (selbe Bedingung wie bei Klassennamen)</li>
+			<li>in der CSS-Datei wird der ID-Selektor mit der Raute eingeleitet, #id{Eigenschaft:Wert;}</li>
+		</ul>
+		<b>Beispiel:
+		&lt;div id="wrapper"&gt;Text&lt;/div&gt;</b>
+		</li>
+		<li>Pseudoklassen: link, visited, hover, active, first-child, focus, lang
+		<br>Beispiel: &lt;a href="#"&gt;Link&lt;/a&gt;
+		<br>a:visited{color:red};
+		</li>
+		
+	
+	</ul>
+
+CSS-Reset (s. auch <a href="http://necolas.github.io/normalize.css/">Normalize.css</a>):
+<div class="box">
+<span class="info">So sieht es aus:</span>
+margin (Au&szlig;enabstand)
+<br>
+padding (Innenabstand)
+<br>
+
+<div style="border:1px solid black; width:200px; height:200px; float:right; margin:10px;">
+	<p style="margin:0; padding:0;">Text</p>
+	<h1 style="margin:0; padding:0;">Text</h1>
+</div>
+
+<p>
+*{
+<br>
+margin:0;
+<br>
+padding:0;
+<br>
+}
+</p>
+
+
+<div class="clear"></div>
+
+
+Ohne CSS Reset:
+<div style="border:1px solid black; width:200px; height:200px; float:right; margin:10px;"><p>Text</p><h1>Text</h1></div>
+<div class="clear"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pseudoklassen:
+<div class="box">
+<span class="info">So sieht es aus:</span>
+a:link{color:silver;} /* Standard-Zustand des Links */
+<br>
+a:visited{color:green} /* Wird angezeigt wenn der Link schon einmal besucht wurde */
+<br>
+a:hover{text-deoration:none;} /* Wird beim dar&uuml;berfahren mit der Maus angezeigt. */
+<br>
+a:active{color:orange;} /* Wenn mit linker Maustaste auf Element geklickt wird. */
+<br>
+<a id="mytarget"></a>
+<a href="#mytarget" class="mylink">Klick mich!</a>
+<br>
+<br>
+.myinput:focus{border:2px solid orange;} /* Wird angezeigt wenn das Element den Fokus erh&auml;lt. */
+<br>
+<input class="myinput" type="text">
+</div>
+<h3>Hinweis: Bei den Pseudoklassen :first-child darf kein TAG-Element im &uuml;bergeordneten Element davor, bzw. bei :last-child kein TAG-Element dahinter stehen!</h3>
+<p>
+FALSCH:
+<br>
+<br>
+#wrapper p:first-child{}
+<br>
+<br>
+&lt;div id="wrapper"&gt;
+<br>
+&lt;h1&gt;Ueberschrift&lt;/h1&gt;
+&lt;p&gt;Absatz&lt;/p&gt;
+<br>
+&lt;/div&gt;
+</p>
+
+<p>
+RICHTIG:
+<br>
+<br>
+#wrapper p:first-child{}
+<br>
+<br>
+&lt;h1&gt;Ueberschrift&lt;/h1&gt;
+<br>
+&lt;div id="wrapper"&gt;
+<br>
+&lt;p&gt;Absatz&lt;/p&gt;
+<br>
+&lt;/div&gt;
+</p>
+
+</article>
+
+
+<div class="clear"></div>
+
+
+<hr>
+
+<article>
+<h1><a id="Pseudoelemente"></a>Pseudoelemente</h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+Pseudoelemnete: before, after, first-letter, first-line;
+	<ul>
+		<li>p:before{content:'***';} /*f&uuml;gt den p-Element den Content hinten an */</li>
+		<li>p:first-letter{color: red;}</li>
+		<li>p:first-line{color: red;}</li>
+	</ul>
+<div class="box">
+<span class="info">So sieht es aus:</span>
+p:first-letter{font-size:2em; color:red;}
+
+<p class="myfirstletter">
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+
+</div>
+
+<h3>Abh&auml;ngiger-Selektor</h3>
+2 oder mehr Selektoren werden mit Leerzeichen nebeneinander geschrieben. Formatierung wird nur im 2. Element angewandt, wenn es im 1. steht.
+<br>
+<br>
+<b>Beispiel:</b>
+<br>
+main h4{}
+<br>
+footer h4{}
+<h3>Kind-Selektor</h3>
+Zwei Selektoren werden mit &gt; verbunden, 2. Element muss direktes Kindelement des 1. Elementes sein.
+<br>
+<b>Beispiel:</b>
+<br>
+main &gt; article{}
+<h3>Tiefen-Selektor</h3>
+2 Selektoren werden mit * verbunden
+<br>
+2. Element muss mindestens 2 Ebenen tiefer liegen
+<br>
+<b>Beispiel:</b>
+<br>
+main * div{}
+<h3>Geschwister-Selektor</h3>
+2 Selektoren werden mit dem + verbunden.
+<br>
+2. Element liegt <b>neben</b> dem 1. Element und darf <b>kein</b> Kind-Element des 1. sein.
+<br>
+<b>Beispiel:</b>
+h6 + p{}
+<h3>Attribut-Selektor</h3>
+<ul>
+	<li>TAG-Name[attribut]{} /* Hier wird formatiert, wenn in einem Element das Attribut enthalten ist. */
+	<b>Beispiel: a[title]{...}</b>
+	</li>
+	<li>TAG-Name[attribut='Wert']
+	<br>
+	<b>Beispiel: input[type='text']</b>
+	</li>
+	<li>TAG-Name[attribut^='wer'] Anfang des Wertes muss enthalten sein</li>
+	<li>TAG-Name[attribut$='ert'] Ende des Wertes muss enthalten sein</li> 
+	<li>TAG-Name[attribut*='er'] Zuweisung muss innerhalb von Wert enthalten sein</li>
+</ul>
+
+</article>
+
+
+<hr>
+
+<article>
+<h1><a id="Dokumententypen"></a>Dokumententypen</h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+Dokumententyp f&uuml;r HTML5 sieht wie folgt aus:
+<br>
+&lt;!DOCTYPE html&gt;
+
+
+
+<hr>
+
+<article>
+<h1><a id="Boxmodell"></a>CSS-Boxmodell</h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+
+<h3>Rahmen (border)</h3>
+Kurzschreibweise:
+<br>
+border: 1px solid #000000;
+Strichst&auml;rke, Rahmenart (solid = durchgezogen), Rahmenfarbe
+
+
+<div class="box">
+<span class="info">So sieht es aus:</span>
+ <img src="files/images/boxmodell.png" alt="boxmodell">
+</div>
+
+</article>
+
+
+<hr>
+
+<article>
+<h1><a id="Meta"></a>Daten im Kopfbereich des HTML-Dokumentes</h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+meta-Element
+
+
+<div class="box">
+<span class="info">So sieht es aus:</span>
+	&lt;meta name="keywords" content="Stichw&ouml;rter"&gt;
+<br>	
+	&lt;meta name="description" content="kurze Beschreibung"&gt;
+<br>
+
+	&lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
+<br>
+
+	&lt;meta name="author" content="Name des Erstellers"&gt;
+<br>
+	
+	&lt;meta name="robots" content="index, follow"&gt;
+<br>
+<br>
+	&lt;base href="startseite.html"&gt;
+<br>
+<br>
+	&lt;link href="CSS Datei oder Favicon"&gt;
+<br>
+<br>
+	&lt;style&gt;CSS-Definitionen&lt;/style&gt;
+<br>
+<br>
+    &lt;script src="Link zur Javascriptdatei"&gt;&lt;/script&gt;
+<br>
+<br>
+	&lt;object data="Link f&uuml;r z.B. Flash-Dateien"&gt;&lt;/object&gt;
+	
+	
+	
+	
+</div>
+</article>
+
+
+
+<hr>
+
+<article>
+<h1><a id="Dreamweaver"></a>Dreamweaver</h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+
+<ul>
+	<li>grafischer Webseiteneditor</li>
+	<li>Wysiwyg - What You See Is What You Get - Editor</li>
+</ul>
+
+CSS einbinden<br>
+media - Attribut<br>
+<ul>
+	<li>media = "all" gültig für alle Geräte</li>
+	<li>aural, Sprachsynthesizer (Sprachausgabe)</li>
+	<li>braille, Blindenschrift</li>
+	<li>handheld, Handys</li>
+	<li>projection, Projektor</li>
+	<li>print, Drucker</li>
+	<li>screen, Bildschirm</li>
+	<li>tty, Termainals</li>
+	<li>tv, Fernseher</li>
+</ul>
+
+</article>
+
+
+
+
+
+<!-- Article Template
+
+<hr>
+
+<article>
+<h1><a id="Artikel"></a>Artikel</h1><a class="backlink" href="#Inhalt">zur&uuml;ck</a>
+
+<div class="box">
+<span class="info">So sieht es aus:</span>
+
+</div>
+
+</article>
+
+-->
+
+<!--
+< &lt;
+> &gt;
+-->
+
+
+</main>
+
+<br>
+<br>
+<footer><span id="copyright">&copy; 2014 by Bernd Liefert</span></footer>
+<!-- Ende #wrapper-->
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+bezieht sich auf
+https://bitbucket.org/schlupp2002/hamster-oop/src/c80e151865fc3140385c5a5c3bffd1987185edb7/kapitel11/uebung01/appMain01.ham?at=master
+
+
+
+Polymorphie
+-----------
+
+-Array "kaefig" enthaelt Objektvariablen vom Typ "Hamster"
+
+-in der "switch... case" werden Objekte der Klasse "Hamster", "SchnellHamster" und "SuperHamster" erzeugt
+und den Objektvariablen im Array zugewiesen
+
+	   +--->Hamster
+	   |
+Hamster----+--->SchnellHamster
+           |
+	   +--->SuperHamster
+
+
+
+Polymorphie <---> Objektvariablen
+
+dynamisches Binden <---> Objekte
+
+
+
+dynamisches Binden
+------------------
+
+-in der Klassenhierachie Hamster<-SchnellHamster<-SuperHamster
+ wird die Methode vor() ueberschrieben
+
+-in der Funktion wettlauf() wird fuer jeden Hamster/SchnellHamster/SuperHamster wird die Methode vor() aufgerufen
+ und abhängig vom referenzierten Objekt wird entschieden, welche Implimentierung von vor() zum Einsatz kommt
+
+
+Hamster	vor() 		-> 1 Schritt
+
+SchnellHamster vor() 	-> 2 Schritte
+
+SuperHamster vor() 	-> 4 Schritte
+
+
+

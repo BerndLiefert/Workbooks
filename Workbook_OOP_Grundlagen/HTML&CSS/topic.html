@@ -1,0 +1,852 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+
+<title>Workbook</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+</head>
+<body>
+
+<div id="wrapper">
+
+<a href="https://github.com/BerndLiefert" target="_blank"><img src="files/forkme.png" id="forkme" alt="forkme"></a>
+
+
+<article class="topic">
+	<h2 class="header"><a id="opp">Was ist ein Objekt?</a></h2>
+	
+	<div class="code">
+	
+	+----------<br>|<br>|&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>|&nbsp;&nbsp;O&gt;&nbsp;&nbsp;&nbsp;&lt;O<br>|<br>+----------
+	
+	</div>
+	<p>
+	Hamster 1 und Hamster 2
+	<ul class="myul">
+		<li>Position im Territorium</li>
+		<li>Blickrichtung</li>
+		<li>Farbe</li>
+		<li>Körner im Maul</li>
+	</ul>
+	
+	</p>
+<p>
+Gemeinsamkeiten, aber unterschiedliche Ausprägungen
+Gemeinsamkeiten => Eigenschaften bzw. Attribute
+</p>
+<p>
+Ausprägungen => Eigenschaftswerte, Attributwerte
+</p>
+	
+<div class="mycode">	
+vor();<br>
+nimm();<br>
+gib();<br>
+linksUm();<br>
+</div>
+<p>
+=>Verhalten bzw. Methoden
+</p>
+
+
+
+
+
+<p>
+Was passiert, wenn der Hamster einen Schritt vorwärts macht?
+</p>
+<p>
+->Hamster bewegt sich und ändert die Eigenschaften für die Position.
+</p>
+<p>
+Das Verhalten hat Einfluss auf die Attributwerte der Objekte.
+</p>	
+
+<p>
+Neu: es kann mehr als einen Hamster geben<br>
+->Es muss irgendeine Anweisung geben, die neue Hamster erzeugt
+</p>
+<span class="keyword">new</span>
+
+<p>
+->wir muessen den Hamstern "Namen" geben
+damit wir diese voneinander unterscheiden koennen
+</p>
+
+<span class="blue">Objektvariablen</span>
+
+<p>
+->neue Hamster muessen durch irgendeine Anweisung im Territorium
+plaziert werden können
+</p>
+
+<p>init</p>
+
+<p>
+Hamster = <span class="blue">Klassendatentyp</span>
+</p>
+
+<div class="mycode">
+<p>
+Hamster facepalm = Hamster.getStandardHamster();
+</p>
+<p>
+facepalm . vor();
+</p>
+
+</div>
+
+
+
+<h3>Datentyp</h3>
+<ul class="myul">
+	<li>Speicherplatz</li> 
+	<li>Wie muss der Computer die Folge von 0 und 1 interpretieren</li>
+	<li>Welche Operationen koennen mit der Variablen ausgefuehrt werden?</li>
+</ul>
+	
+<h3>Variablen vom Typ Hamster</h3>
+	<ul class="myul">
+		<li>Lebensdauer</li>
+		<li>Gültigkeitsbereich</li>
+	</ul>
+
+<div class="mycode">
+<p>
+Hamster paul; <span class="comment">//globale Variable</span>
+</p>
+<p>
+<span class="keyword">void</span> main(){
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;paul = Hamster.getStandardHamster();
+</p>
+<p>
+}
+	</p>
+</div>
+
+Gültigkeitsbereich
+<div class="code">
+main(){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">void</span>&nbsp;prozedur(){<br>&nbsp;paul&nbsp;--------&gt;&nbsp;...<br>&nbsp;...<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;--------<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>}
+</div>
+
+
+<h3>Lebensdauer</h3>
+<p>
+Eine Variable "stirbt" wenn der Anweisungsblock in 
+dem sie definiert wurde verlassen wird.
+</p>
+<p>
+null : "nichts"
+</p>
+<div class="mycode">
+<p>
+Hamster paul = Hamster.getStandardHamster(); <span class="comment">//für den StandardHamster zusaetzlichen Namen vergeben</span><br>
+paul = null; <span class="comment">//ueber paul ist der Standardhamster nicht mehr erreichbar da nicht referenziert wird</span>
+</p>
+
+
+
+<p>
+paul = <span class="keyword">new</span> Hamster();
+</p>
+<p>
+paul = null; <span class="comment">//Der Name paul referenziert nichts mehr</span>
+</p>
+
+
+<p>
+paul = <span class="keyword">new</span> Hamster();
+</p>
+<p>
+paul = <span class="keyword">new</span> Hamster();
+</p>
+</div>
+
+<div class="code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^&nbsp;&nbsp;&nbsp;^<br>paul&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;&gt;&nbsp;(.___.)&nbsp;blauer&nbsp;Hamster<br>&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^&nbsp;&nbsp;&nbsp;^&nbsp;&nbsp;<br>&nbsp;+-----------&gt;&nbsp;(.___.)&nbsp;gruener&nbsp;Hamster
+</div>
+	
+</article>
+
+
+<article class="topic">
+	<h2 class="header"><a id="klassen">Klassen</a></h2>
+
+<h3>Klasse Hamster</h3>
+
+<ul class="myul">
+	<li>Klassen sind Bauplaene</li>
+	<li>beschreiben welche Eigenschaften und welches Verhalten Objekte der Klasse besitzen</li>
+</ul>
+
+<p>
+<span class="keyword">class</span> Hamster{
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;Eigenschaften: Variablen, Konstanten
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;Verhalten: Methoden (Prozeduren oder Funktionen)
+</p>
+<p>
+}
+</p>
+
+<p>
+Klassennamen beginnen mit einem Großbuchstaben
+</p>
+<p>
+<span class="keyword">class</span> EigeneKlasse{
+</p>
+<p>
+Eigenschaften
+</p>
+------------------
+<p>
+Verhalten
+</p>
+<p>
+}
+</p>
+
+<div class="mycode">
+<p>
+<span class="keyword">class</span> Hamster{
+</p>
+
+<p>
+	<span class="comment">//Eigenschaften</span><br>
+	<span class="keyword">int</span> blickrichtung;<br>
+	<span class="keyword">int</span> spalte;<br>
+	<span class="keyword">int</span> reihe;<br>
+	<span class="keyword">int</span> anzahlKoerner;<br>
+	<span class="keyword">int</span> farbe;<br>
+</p>
+
+<p>
+	<span class="comment">//Verhalten</span><br>
+	<span class="keyword">void</span> linksUm(){<br>
+	...<br>
+	}
+</p>
+
+<p>
+	<span class="keyword">void</span> nimm(){<br>
+	...<br>
+	}
+</p>
+	
+<p>
+	<span class="keyword">void</span> vor(){<br>
+	...<br>
+	}
+</p>
+
+<p>
+	<span class="keyword">boolean</span> vornFrei(){<br>
+	...<br>
+	<span class="keyword">return</span> ...<br>
+	}
+</p>
+
+<p>
+
+	<span class="keyword">boolean</span> kornDa(){<br>
+	...<br>
+	<span class="keyword">return</span> ...<br>
+	}
+</p>	
+<p>
+}
+</p>
+</div>
+
+
+<p>
+<span class="keyword">void</span> linksUm(){
+</p>	
+	
+<div class="code">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&lt;-----------&gt;&nbsp;1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2
+</div>
+
+<p>
+blickrichtung = (blickrichtung + 3) % 4;
+</p>
+<p>
+N = 0 + 3 = 3 % 4 = 3 = W
+</p>
+<p>
+O = 1 + 3 = 4 % 4 = 0 = N
+</p>
+<p>
+S = 2 + 3 = 5 % 4 = 1 = 0
+</p>
+<p>
+W = 3 + 3 = 6 % 4 = 2 = S
+</p>
+
+<p>
+}
+</p>
+
+<p>
+Objekt . Methode()
+</p>
+<p>
+Objekt . Attribut
+</p>
+
+
+<div class="mycode">
+<p>
+<span class="keyword">class</span> Hamster{
+</p>
+<p>
+&nbsp;&nbsp;<span class="keyword">void</span> vor(){
+</p>
+<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;if(<span class="keyword">this</span>.blickrichtung == 0){
+	</p>
+<p>	
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.reihe = <span class="keyword">this</span>.reihe - 1; <span class="comment">//Prüfen: Reihe > 0</span>
+	</p>
+<p>	
+		&nbsp;&nbsp;&nbsp;&nbsp;}
+	</p>
+<p>	
+		&nbsp;&nbsp;&nbsp;&nbsp;if(<span class="keyword">this</span>.blickrichtung == 2){
+</p>
+<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.reihe = <span class="keyword">this</span>.reihe + 1;
+	</p>
+<p>	
+		&nbsp;&nbsp;&nbsp;&nbsp;}
+</p>
+<p>	
+	&nbsp;&nbsp;&nbsp;&nbsp;if(<span class="keyword">this</span>.blickrichtung == 1){
+</p>
+<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.spalte = <span class="keyword">this</span>.spalte + 1;	
+	</p>
+<p>	
+		&nbsp;&nbsp;&nbsp;&nbsp;}
+</p>
+<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;if(<span class="keyword">this</span>.blickrichtung == 1){
+</p>
+<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.spalte = <span class="keyword">this</span>.spalte - 1;	
+	</p>
+<p>	
+		&nbsp;&nbsp;&nbsp;&nbsp;}
+</p>
+
+		
+
+<p>
+	&nbsp;&nbsp;}
+</p>
+<p>
+}
+</p>
+</div>
+
+
+
+<h3>Kapitel 4 Aufgabe 5</h3>
+
+<p>
+Hamster paul<br>
+0 Reihe<br>
+8 Spalte<br>
+0 Blickrichtung<br>
+4 Koerner<br>
+</p>
+
+<p>
+Hamster heidi<br>
+0 Reihe<br>
+6 Spalte<br>
+2 Blickrichtung<br>
+7 Koerner<br>
+</p>	
+	
+	
+<div class="mycode">
+	
+<span class="comment">//Parameter ist eine Objektvariable(Name, Referenz) vom Typ "Hamster"</span>
+<p>
+<span class="keyword">void</span> rechtsUm(Hamster name){
+</p>
+<p>
+	name.linksUm();
+</p>
+<p>	
+	name.linksUm();
+</p>
+<p>
+	name.linksUm();
+</p>
+<p>
+	}
+</p>
+
+<p>
+<span class="keyword">void</span> main() {
+</p>
+<p>
+	Hamster paul = Hamster.getStandardHamster();
+   </p>
+<p>   
+    rechtsUm(paul);
+</p>
+<p>
+	}	
+</p>
+</div>
+	
+	
+	
+
+
+<h3>Erweitern von Klassen mit <span class="keyword">extends</span></h3>
+
+
+<div class="mycode">
+<p>
+<span class="keyword">class</span> MeinHamster <span class="keyword">extends</span> Hamster{
+</p>
+<p>
+&nbsp;&nbsp;<span class="keyword">void</span> rechtsUm(){
+</p>
+<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.linksUm();
+</p>
+<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.linksUm();
+</p>
+<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.linksUm();
+</p>
+<p>
+	&nbsp;&nbsp;}
+</p>
+<p>
+}
+</p>
+</div>
+
+<p>
+grundsaetzlich
+</p>
+<p>
+Klasse 	:	Datei
+</p>
+<p>
+1	:	1
+</p>
+
+<p>
+<span class="blue">Klassennamen beginnen mit einem Großbuchstaben</span>
+</p>
+
+<p>
+Eigenschaften und Verhalten beginnen mit Kleinbuchstaben, dann aber Camel-Case
+</p>
+
+<p>
+in JAVA
+Sowohl Klasse als auch das Programm uebersetzen
+</p>
+
+
+<div class="mycode">
+<p>
+<span class="comment">//fluent interface</span>
+</p>
+<p>
+<span class="keyword">int</span> reihe = Hamster.getStandardHamster().getReihe();
+</p>
+</div>
+	
+</article>
+
+
+
+<article class="topic">
+	<h2 class="header"><a id="ueberladen">Ueberladen von Methoden</a></h2>
+	
+	
+
+<h4>Aufgabe: Der Hamster soll bis zur naechsten Wand laufen.</h4>
+<p>
++ naechsteWand()
+</p>
+<h4>Aufgabe: Der Hamster soll bis zur naechsten Wand laufen und auf jeder Kachel ein Koern ablegen</h4>
+<p>
++ naechsteWandUndKorn()
+</p>
+<p>
+...
+</p>
+<p>
++ ...
+</p>
+
+<p>
+(1) naechsteWand()<br><br>
+
+(2) naechsteWand(int gap)<br><br>
+
+(3) naechsteWand(int gap, int anzahl)
+
+</p>
+
+<p>
+----------->#
+</p>
+<p>
+-.-.-.-.-.-># gap=1
+</p>
+<p>
+--.--.--.--># gap=2
+</p>
+<p>
+-...-...-...->#gap=1 anzahl=3
+</p>
+
+<p>
+Unter ueberladen von Methoden versteht man, die Methoden haben den gleichen Namen, sie unterscheiden 
+sich aber in der Anzahl und/oder Typ der Parameter.
+</p>
+
+<p>
+<span class="blue">Zu vermeiden:</span><br>
+naechsteWand(int, float)<br>
+naechsteWand(float, int)
+</p>
+
+
+
+<h3>Konstruktoren</h3>
+<p>
+Konstruktoren sind Methoden einer Klasse, die
+</p>
+
+<ol class="myol">
+<li>den Namen der Klasse tragen</li>
+<li>beim Erzeugen neuer <span class="blue">Objekte</span> automatisch aufgerufen werden
+	<ul class="myul">
+	<li>sie werden zum Initialisieren d. neuen Objekte verwendet</li>
+    <li>der Entwickler der Klasse uebernimmt die Verantwortung fuer das Initialisieren des Objektes</li>
+	</ul>
+	
+	</li>
+</ol>
+
+
+
+
+
+
+
+
+Die Konstruktoren MeinHamster haben keinen Datentyp
+<div class="mycode">
+<p>
+<span class="keyword">class</span> MeinHamster{
+</p>
+<p>
+	&nbsp;&nbsp;MeinHamster(){
+</p>
+<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//initialisieren</span>
+</p>
+<p>	
+	&nbsp;&nbsp;}
+</p>
+<p>
+	&nbsp;&nbsp;MeinHamster(int r, int s, int b, int a){
+</p>
+<p>	
+	&nbsp;&nbsp;}
+</p>
+<p>
+}
+</p>
+</div>
+
+
+=========================================================================
+
+
+Tipp: Konstruktoren durch eigene Methoden ersetzen
+
+
+<div class="code">
+
+class<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Konstruktor1&nbsp;&lt;----&nbsp;(&nbsp;Methode1&nbsp;)&nbsp;----&gt;&nbsp;App<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eigenschaften--Konstruktor2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Konstruktor3
+
+
+</div>
+
+Trennen Sie die Objekterzeugung von der Applikation ab.
+
+<div class="code">
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-----+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;APP&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-----+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+---------------+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Fabrikmethode&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+---------------+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+--------+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Objekt&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+--------+
+
+
+
+</div>
+
+
+<h3>Klassenattribute</h3>
+
+<ul class="myul">
+	<li>Attribute sind Eigenschaften eines Objektes (Farbe: Blau, Rot, Gelb)</li>
+
+	<li>Klassenattribut ist eine gemeinsame Eigenschaft aller Objekte einer Klasse</li>
+
+	<li>alle Objekte einer Klasse können auf diese Eigenschaft zugreifen</li>
+</ul>
+
+Beispiel:
+
+<div class="code">
+
+ &gt;(:&gt;o&nbsp;&nbsp;&nbsp;--+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&gt;(:&gt;o&nbsp;&nbsp;&nbsp;--+&nbsp;Anzahl&nbsp;gesammelte&nbsp;Koerner&nbsp;aller&nbsp;Hamster<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;<br>&gt;(:&gt;o&nbsp;&nbsp;&nbsp;--+
+
+
+</div>
+
+
+Klassenattribute werden mit dem Schluesselwort static deklariert/definiert
+
+<div class="mycode">
+<p>
+<span class="keyword">class</span> MeinHamster <span class="keyword">extends</span> Hamster{
+</p>
+<p>
+	&nbsp;&nbsp;<span class="keyword">int</span> alleinGesammelteKoerner = 0;	<span class="comment">//Instanzattribut</span>
+</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;...
+</p>
+<p>
+	&nbsp;&nbsp;<span class="keyword">static int</span> gesammelteKoernerGesamt = 0;	<span class="comment">//Klassenattribut</span>
+</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;...
+</p>
+<p>
+	&nbsp;&nbsp;<span class="keyword">void</span> sammle(){
+</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;MeinHamster.gesammelteKoernerGesamt++;
+</p>
+<p>
+	&nbsp;&nbsp;}
+</p>
+<p>
+}
+</p>
+</div>
+
+Wenn wir auf Klassenattribute zugreifen wollen muss der Klassenname voran geschrieben werden:
+
+<div class="code">
+MeinHamster&nbsp;.&nbsp;gesammelteKoernerGesamt++;<br>&nbsp;&nbsp;&nbsp;&nbsp;^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>Klassenname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Klassenattribut
+
+
+
+</div>
+
+
+
+
+
+=========================================================================
+<h3>Klassenmethode</h3>
+
+<div class="code">
+
+Klassenmethoden&nbsp;werden&nbsp;ebenfalls&nbsp;mit&nbsp;dem&nbsp;Schluesselwort&nbsp;static&nbsp;deklariert<br>Klassenmethoden&nbsp;sind&nbsp;unabhaengig&nbsp;von&nbsp;Objekten&nbsp;verwendbar<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+--&gt;&nbsp;der&nbsp;Aufruf&nbsp;der&nbsp;Klassenmethoden&nbsp;erfolgt&nbsp;ueber&nbsp;Angabe&nbsp;des&nbsp;Klassennamens<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+--&gt;Klasse.Methode(),&nbsp;z.B.&nbsp;Hamster.getStandardHamster()<br><br><br><br>Klassenmethoden&nbsp;duerfen&nbsp;nur&nbsp;auf&nbsp;(statische)&nbsp;Klassenattribute&nbsp;zugreifen<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+---&gt;Grund:&nbsp;eine&nbsp;statische&nbsp;Methode&nbsp;kann&nbsp;unabhaengig&nbsp;von&nbsp;Objekten&nbsp;aufgerufen&nbsp;werden
+
+
+</div>
+
+
+<h4>Falsch:</h4>
+<div class="mycode">
+<p>
+<span class="keyword">static int</span> getGemeinsamGesammelteKoerner(){
+</p>
+<p>
+	&nbsp;&nbsp;<span class="keyword">int</span> fehler = <span class="keyword">this</span>.alleineGesammelteKoerner;  <span class="comment">// <- !</span>
+</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> MeinHamster.gemeinsamGesammelteKoerner;
+</p>
+<p>
+}
+</p>
+</div>
+
+
+
+=========================================================================
+
+
+Territorium.getAnzahlSpalten() : int "Wie groß ist das Territorium?"
+Territorium.getAnzahlReihen() : int
+
+<div class="code">
+<br>+-----------+<br>|:&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&gt;|<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>|:&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&gt;|<br>+-----------+
+
+
+
+</div>
+<p>
+Territorium.getAnzahlHamster(r, s) : int "Wie viele Hamster stehen auf der Kachel?"
+</p>
+<p>
+Territorium.getAnzahlHamster() : int "Wie viele Hamster gibt es im Territorium?"
+</p>
+<p>
+Territorium.mauerDa(r, s) : boolean "Befindet sich an den Koordinaten eine Mauer?"
+</p>
+<p>
+linksFrei();<br>
+rechtsFrei();
+</p>
+<p>
+
+Territorium.getAnzahlKoerner(r, s) : int "Wie viele Koerner liegen auf der Kachel?"
+</p>
+<p>
+Territorium.getAnzahlKoerner() : int "Wie viele Koerner liegen im Territorium?"
+</p>
+
+<div class="code">
+
+S&nbsp;:&nbsp;Spalte<br>R&nbsp;:&nbsp;Reihe<br>HS&nbsp;:&nbsp;HamsterSpalte<br>HR&nbsp;:&nbsp;HamsterReihe<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>W&nbsp;&lt;-----+-----&gt;&nbsp;O<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br>
+
+<table border="1px" class="mytable">
+<thead>
+<tr>
+	<th>N</th>
+	<th>O</th>
+	<th>S</th>
+	<th>W</th>
+</tr>
+<tbody>
+<tr>
+	<td>S=HS-1</td>
+	<td>S=HS</td>
+	<td>S=HS+1</td>
+	<td>S=HS</td>
+</tr>
+<tr>
+	<td>R=HR</td>
+	<td>R=HR-1</td>
+	<td>R=HR</td>
+	<td>R=HR+1</td>
+</tr>
+</tbody>
+</thead>
+
+
+</table>
+
+
+
+
+
+
+</div>
+
+
+
+
+=========================================================================
+
+<h3>Subobjekte</h3>
+
+Die Klasse Hamster betrachten wir auch als Datentyp
+Datentypen koennen zum Deklarieren/Definieren neuer Variablen verwendet werden
+<ol class="myol">
+	<li>lokal</li>
+	<li>global</li>
+	<li>in Klasse ---> Objekte koennen Eigenschaften von anderen Objekten sein</li>
+</ol>
+
+=========================================================================
+
+<h3>Konstanten</h3>
+
+Klasse.KONSTANTE
+
+
+
+<p>
+1) Zielkoordinaten des blauen Hamsters 
+rb, sb
+</p>
+<p>
+2.1) gruenen Hamster erzeugen
+</p>
+<p>
+2.2) gruenen Hamster zur Reihe rb laufen lassen
+</p>
+<p>
+2.3) gruenen Hamster zur Spalte sb laufen lassen
+</p>
+<p>
+2.2.1) Reihenabstand berrechnen deltar = rg - rb
+</p>
+<p>
+2.2.2) "Richtig" hindrehen
+</p>
+<p>
+deltar == 0  / keine Drehung notwendig<br>
+deltar > 0   / Hamster.NORD<br>
+deltar  < 0   / Hamster.SUED<br>
+</p>
+<p>
+2.2.3) deltar Schritte vorwaerts
+</p>
+	
+	
+</article>
+
+
+
+
+<!--
+
+<article class="topic">
+	<h2 class="header"><a id="TOPIC">HEADER</a></h2>
+</article>
+
+-->
+
+
+<div class="code">
+&nbsp;&nbsp;_______<br>&nbsp;/|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/|<br>/&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;|<br>+-----+&nbsp;&nbsp;|<br>|&nbsp;|___|__|<br>|&nbsp;/&nbsp;&nbsp;&nbsp;|&nbsp;/<br>|/&nbsp;&nbsp;&nbsp;&nbsp;|/<br>+-----+
+</div>
+
+
+
+</div>
+</body>
+</html>

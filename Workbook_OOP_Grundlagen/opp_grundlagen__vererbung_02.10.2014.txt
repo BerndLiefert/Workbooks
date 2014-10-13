@@ -1,0 +1,246 @@
+Überladen von Methoden
+
+Gleicher Bezeichner aber unterschliedliche Signatur
+
+vor()
+vor(int anzahl)
+vor(int anzahl, boolean richtung)
+
+
+Konstruktor
+
+Konstruktoren haben keinen Datentyp und sie heißen genau so wie das Objekt, Konstruktoren initialisieren ein Objekt
+
+class MeinHamster(){
+
+	MeinHamster(){
+
+
+	}
+
+}
+
+
+
+Klassenattribute sind Eigenschaften der Klasse
+   |
+   |
+   +---> gemeinsam gesammelte Koerner
+
+class Infanterie{
+
+static int maxZahl = 100;
+static int anzahl = 0;
+
+...
+
+Objektattribute sind Eigenschaften der Objekte
+    |
+    |
+    +---->	Farbe: rot
+		Farbe: blau
+		Farbe: gruen
+
+
+
+Klassenmethoden sind Verhalten der Klasse
+ |
+ +--> duerfen aufgerufen werden ohne dass ein Objekt existiert
+
+static Klassenname . Methodenname ()
+
+
+
+==========================================================================================
+
+Vererbung
+
+Das Erweitern der Klasse mit extends fuehrt zu neuen Klassen, die all das 
+an Eigenschaft und Verhalten aufweisen, was bereits in den vorhandenen Klassen definiert wurde. 
+
++ neue Eigenschaften
++ neue Methoden
+
+Die Eigenschaften und Methoden der vorhandenen Klassen werden vererbt.
+
+UML-Diagram
+
++-------+
++-------+
+|       | Elternklasse - Basisklasse | Generalisierung (Allgemein)
+|       |
++-------+
++-------+
+    ^
+   /_\
+    |
+    |
+    |
++-------+
++-------+
+|       | Kindklasse - abgeleitete Klasse | Spezialisierung
+|       |
++-------+
++-------+
+
+
+"Was passiert?"
+Elternklasse: vor();
+Kindklasse: vor();
+
+In der Kindklasse koennen Eigenschaften und Methoden den gleichen Namen haben, wie in der Elternklasse.
+
+In diesem Fall "verdecken" die Eigenschaften und Methoden der Kindklasse die Eigenschaften und Methoden der Elternklasse.
+
+
+
+Hamster:	vor()	o ->
+
+
+
+ElternHamster:	vor()	o ->
+
+
+				  ^
+				  |
+KindHamster:	public vor()	o-+
+
+
+In der KindHamster Klasse:
+
+ public void vor(){
+ 
+  this.linksUm();
+  this.linksUm();
+  this.linksUm();
+  this.linksUm();
+  
+  super.vor(); //benutzt das vor() aus der ElternHamster Klasse
+ 
+ }
+
+
+Wird in der Kindklasse eine Methode gleichen Namens wie in der Elternklasse definiert und stimmen die Signaturen der Methoden
+ueberein, dann spricht man von Ueberschreiben.
+
+
+Regeln bei der Definition von Konstruktoren
+
+Regel 1:
+
+class X {
+
+	int egal;
+	
+	//ein Konstruktor mit Parametern
+	X(int e){
+	
+		this.egal = e;
+	
+	}
+    
+
+class Y extends X {
+
+}
+
+Fehler: cannot find symbol	symbol : constructor X()	Z 1	Datei	Y
+
+Der Computer versucht den Konstruktor der Klasse X aufzurufen um deren Eigenschaften zu initialisieren
+
+Lösung:
+
+In der Klasse Y muss ein Konstruktor geschrieben werden, dieser muss den Konstruktor der Basis-Klasse aufrufen.
+
+class Y extends X {
+  
+  Y(int e){
+  
+  super(e);
+  
+  }
+    
+    
+}
+
+-----------------------------------------------------------------------------------------------------------
+
+Regel 2:
+
+
+class X {
+    
+ X(){
+ 
+ 	// irgendetwas initialisiern
+ 
+ }    
+    
+ X(int e){
+ 
+ 	//irgendetwas anderes initialiesieren
+ 
+ }
+    
+}
+
+
+class Y extends X {
+    
+}
+
+Kein Fehler da die Klasse X einen Standardkonstruktor besitzt
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+Regel 3: 
+
+class X {
+    
+    X(){
+    
+    //blabla
+    
+    }
+    
+    
+}
+
+
+
+class Y extends X {
+
+ Y(){
+ 
+ //blub
+ 
+ }
+    
+}
+
+Kein Fehler da der Konstruktor Y automatisch den parameterlosen Konstruktor der Klasse X aufruft
+
+
+Was bedeuten diese Konstruktorregeln?
+
+(1) Schreiben Sie immer einen Standardkonstruktor (ohne Parameter)!
+
+oder
+
+(2) wenn Sie in keiner Klasse Konstruktoren definieren gibt es beim Uebersetzten auch keine Probleme.
+
+
+
+
+=============================================================================================================
+
+Vererbung laesst sich mit final "kontrollieren"
+
+(1) finale Klassen lassen sich nicht erweitern
+
+(2) finale Methoden lassen sich nicht ueberschreiben
+
+
+

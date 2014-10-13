@@ -1,0 +1,2 @@
+heap - Haldenspeicher
+stack - Stappelspeicher

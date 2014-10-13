@@ -1,0 +1,56 @@
+body{
+background:silver;
+}
+#wrapper{
+background:white;
+}
+
+main, nav{
+padding:10px;
+}
+
+.box{
+border:1px solid black;
+padding:20px 10px 10px 10px;
+position:relative;
+margin:20px 0 20px 0;
+}
+.info{
+padding:8px;
+position:absolute;
+top:-18px;
+left:10px;
+background:white;
+font-weight:bold;
+font-style:italic;
+color:gray;
+}
+.silver{
+color:silver;
+}
+
+.mylink:link{
+color:silver;
+}
+
+.mylink:visited{
+color:green;
+}
+
+.mylink:hover{
+text-decoration:none;
+}
+
+.mylink:active{
+color:orange;
+}
+
+.myinput:focus{
+border:6px solid orange;
+outline:none;
+}
+
+.myfirstletter:first-letter{
+font-size:2em; 
+color:red;
+}
