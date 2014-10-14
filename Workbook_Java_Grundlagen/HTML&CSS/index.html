@@ -73,7 +73,7 @@
 	[Strg] + [Leertaste]
 	</p>
 	
-	
+	<img src="files/netbeans/abstrakteklasse.png" width="860px" alt="bild">
 	</article>
 	
 	
@@ -165,8 +165,188 @@
 	
 	</article>
 	
+	<!-- -->
 	
+	<article class="topic">
+	
+	<h2 class="header"><a id="anhang1">Anhang</a></h2>
+	
+	<p>in Java sind <span class="blue">alle</span> Klassen direkt von der Klasse Object abgeleitet</p>
+	
+	<p>die Klasse Object bietet drei wichtige Methoden an, die ggf. in den eigenen Klassen &uuml;berschrieben werden m&uuml;ssen</p>
 
+	<div class="mycode">
+	<p>toString():string <span class="comment">//liefert eine Zeichenkettenrepr&auml;sentation</span></p>
+	
+	<p>hashCode():int <span class="comment">//liefert eine eindeutige Objekt-ID</span></p>
+
+	<p>equals():boolean <span class="comment">//liefert eine Aussage dar&uuml;ber, ob zwei Objekte gleich sind</span></p>
+	</div>
+	
+	
+	<h3>Autoboxing</h3>
+	"Alles ist ein Objekt aber nur dann, wenn es unbeding sein muss"
+	<img src="files/autoboxing/grafik.png" alt="bild">
+	
+	<h3>toString()</h3>
+	<p>
+	falls Sie "individuelle" Ausgaben f&uuml;r Objekte Ihrer Klassen w&uuml;nschen, dann &uuml;berschreiben Sie die Methode toString():string
+	</p>
+	<img src="files/tostring/grafik1.png" width="860px" alt="bild">
+	
+	<h3>Vergleiche</h3>
+	die Vergleiche auf Gleichheit f&uuml;hren bei primitiven Datentypen immer zu den "richtigen" Ergebnissen
+	<div class="mycode">
+	<p>
+	int x = 100;<br>
+	int y = 100;<br>
+	if(x == y)<br>
+	<span class="comment">//gleich</span>
+	</p>
+	</div>
+	
+	die Vergleiche auf Gleichheit bei Objekten m&uuml;ssen differenziert betrachtet werden
+	
+	<div class="mycode">
+	<p>
+	String s1 = <span class="keyword">new</span> String("Hallo Welt")<br>
+	String s2 = <span class="keyword">new</span> String("Hallo Welt")<br>
+	if(s1 == s2)<br>
+	<span class="comment">//ungleich, == vergleicht die Objektreferenzen</span><br>
+	if(s1.equals(s2))<br>
+	<span class="comment">//gleich, equals vergleicht je nach Implementierung</span>
+	</p>
+	</div>
+	<p><span class="blue">L&ouml;sung:</span></p>
+	Wie muss equals() implementiert werden? "equals contract"
+	
+	<ol class="myol">
+		<li>Reflexivit&auml;t: jedes Objekt liefert im Vergleich mit sich selbst TRUE</li>
+		<li>Symetrie: wenn x "==" y TRUE ist, dann muss auch y "==" x TRUE sein</li>
+		<li>Transitivit&auml;t: wenn x "==" y TRUE ist und y "==" z TRUE ist, dann muss auch x "==" z TRUE sein</li>
+		<li>Konsistenz: x "==" y muss auch bei wiederholter Ausf&uuml;hrung TRUE/FALSE sein</li>
+		<li>f&uuml;r alle x != 0 -&gt; x "==" null muss FALSE sein</li>
+	</ol>
+	
+	<img src="files/equals/grafik1.png" alt="equals">
+	<p>
+	1.
+	</p>
+	<div class="mycode">
+	<p>
+	<span class="keyword">public</span> <span class="keyword">boolean</span> equals(object other){
+	</p>
+	<p>
+	if(<span class="keyword">this</span> == other)
+	
+	
+	</p>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> true;	
+	
+	<p>
+	}
+	</div>
+	
+	<p>
+	5.
+	</p>
+	<div class="mycode">
+	<p>
+	<p>
+	if(other == null)
+	</p>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> false;	
+	
+	</p>
+	<p>
+	}
+	</p>
+	</div>
+	
+	<p>
+	2. 3. 4. 
+	</p>
+	
+	<p>
+	pr&uuml;fen, ob alle eigenen Attributwerte mit allen korrespondierenden anderen Attributwerten &uuml;bereinstimmen, Bsp.:
+	</p>
+		
+	<div class="mycode">
+		<span class="keyword">this</span>.a1 == other.a1 &&<br>
+		<span class="keyword">this</span>.a2 == other.a2 &&<br>
+		<span class="keyword">this</span>.aN == other.aN<br>
+	</div>
+	
+	<h3>hashCode() Contract</h3>
+	<ol class="myol">
+		<li>egal, wie oft man hashCode() aufruft, die Methode liefert immer den gleichen Wert</li>
+	<li><span class="blue">!</span>wenn zwei Objekte gleich sind, dann haben sie den gleichen Hashcode
+		<ul class="myul">
+			<li>Wer equals() &uuml;berschreibt muss auch hashCode() &uuml;berschreiben
+				<ul class="myul">
+					<li>if(x.equals(y)) =&gt; x.hashCode == y.hashCode</li>
+				</ul>
+			
+			</li>
+		</ul>
+	</li>
+	<li>ungleiche Objekte sollen verschiedene HashCodes haben</li>
+	</ol>
+	
+	
+	<img src="files/hashfunktion/grafik.png" alt="grafik">
+	
+	
+	<p>
+	<img src="files/hashfunktion/grafik3.png" alt="grafik">
+	</p>
+	
+	ks1 = new KlasseSteffen(1000);<br>
+	ks2 = new KlasseSteffen(1000);<br>
+	ks1.equals(ks2) -&gt; TRUE =&gt; ks1.hashCode() == ks2.hashCode()
+	
+	<div class="mycode">
+	<p>
+	<span class="keyword">class</span> KlasseSteffen{
+	</p>
+	
+	<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">int</span> hashCode(){
+	</p>
+	
+	<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="files/hashfunktion/formel.png" alt="formel">
+	</p>
+	
+	<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;}
+	</p>
+	
+	
+	<p>
+	}
+	</p>
+	
+	</div>
+	<p>
+	startwert != 0<br>
+	this.meinWert, relevantes Attribut f&uuml;r equals<br>
+	multiplikator, eine nicht zu große Primzahl
+	</p>
+	
+	<img src="files/hashfunktion/grafik4.png" alt="hash">
+	<div class="warning">
+	<img class="signs" src="files/images/warning.png" alt="warning">Hinweis: Grafik zur L&ouml;schung vorgeschlagen
+	
+	<div class="clear"></div>
+	</div>
+	
+	
+	<h3>Aufgabe:</h3>
+	<img src="files/aufgabe1/aufgabe.png" alt="aufgabe">
+	</article>
+	
+	
 	
 	
 	

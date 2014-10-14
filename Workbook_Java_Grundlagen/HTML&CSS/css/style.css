@@ -223,3 +223,21 @@ padding:10px;
 background:#D8D8D8;
 }
 
+.warning{
+border:6px solid #B40404;
+padding:10px;
+margin:10px;
+font-size:1.2em;
+background:#FE2E2E;
+color:#FFFFFF;
+}
+
+.signs{
+width:28px;
+float:left;
+margin-right:10px;
+}
+
+.clear{
+clear:both;
+}
