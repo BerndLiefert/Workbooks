@@ -3,7 +3,7 @@
 <head>
 
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
 
 <script type="text/javascript">
 
@@ -11,6 +11,8 @@ function replace(){
 
 var input = $('#input').val();
 
+var rownumbers = input.match("\n", "g");
+console.log(rownumbers);
 
 input = input.replace(/ /g, "&nbsp;");
 
@@ -20,12 +22,14 @@ input = input.replace(/class/g, '<span class="keyword">class</span>');
 input = input.replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 
 
+
+
 //Comments ---------------------------------
 var comments = input.match("//.*\n", "g");
 
-console.log(comments);
+//console.log(comments);
 
-
+if(comments != null){
 for(var i = 0; i < comments.length; i++){
 
 var pattern = new RegExp(comments[i], 'g');
@@ -33,7 +37,14 @@ var pattern = new RegExp(comments[i], 'g');
 input = input.replace(pattern, '<span class="comment">' + comments[i] + '</span>');
 
 }
+}
 
+//last comment
+var lcomment = input.match("//.*\Z", "g");
+
+if(lcomment != null){
+input.replace(lcomment[0], '<span class="comment">' + lcomment[0] + '</span>');
+}
 //-----------------------------------------------
 
 
@@ -61,11 +72,39 @@ $('#output').text(input);
 $('#preview').append(input);
 
 
+
+
+
+var result = "";
+
+for(var a = 1; a < rownumbers.length+2; a++){
+
+result = result + a + "<br>";
+
+}
+console.log(result);
+
+$('#rownumbers').append(result);
+
 }
 
-
-
 </script>
+
+<style type="text/css" rel="stylesheet">
+
+#rownumbers{
+padding:10px 0 10px 0;
+margin:10px 0 10px 10px;
+width:18px;
+float:left;
+border-right:1px solid red;
+}
+
+#preview{
+float:left;
+}
+
+</style>
 </head>
 <body>
 
@@ -75,8 +114,10 @@ $('#preview').append(input);
 <button onclick="javascript:replace();">uebersetze</button>
 &lt;div class="mycode"&gt;<span id="output"></span>&lt;/div&gt;
 
+<div>
+<div id="rownumbers"></div>
 <div id="preview" class="mycode">
-
+<div class="clear"></div>
 </div>
 
 </body>

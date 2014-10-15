@@ -36,7 +36,7 @@
 				<ul>
 					<li><a href="#netbeans">Netbeans</a></li>
 					<li><a href="#zugriffsrechte">Zugriffsrechte</a></li>
-					<li><a href="#">Subitem1</a></li>
+					<li><a href="#equals">equals(), hashCode() und toString()</a></li>
 				</ul>
 			
 			</li>		
@@ -169,7 +169,7 @@
 	
 	<article class="topic">
 	
-	<h2 class="header"><a id="anhang1">Anhang</a></h2>
+	<h2 class="header"><a id="equals">equals() toString() und hashCode()</a></h2>
 	
 	<p>in Java sind <span class="blue">alle</span> Klassen direkt von der Klasse Object abgeleitet</p>
 	
@@ -347,13 +347,243 @@
 	<img src="files/aufgabe1/aufgabe.png" alt="aufgabe">
 	</article>
 	
+	<h3><span class="blue">L&ouml;sung:</span></h3>
+	<p>
+	startwert: 19<br>
+	faktor: 39<br>
+	
+	<ol class="myol">
+		<li>hashCode = 39 * 19 + this.attribut; //int direkt</li>
+		<li>hashCode = 39 * hashCode + (int)(attributB ^ (attributB>>>32)) //attributB, long</li>
+		<li>hashCode = 39 * hashCode + attributC.hashCode()</li>
+	
+		<ul class="myul">
+				<li>return hashcode & 0xFFFFFFFF</li>
+		</ul>
+	
+	</ol>
+	
+	</p>
 	
 	
+	<article class="topic">
+	
+	<h2 class="header"><a id="exceptions">Fehlerbehandlung mit Exceptions</a></h2>
+	
+	<p>
+	die Exceptions treten zur Laufzeit auf
+	</p>
+	<p>
+	Exceptions sind Objekte der Klasse Exception bzw. von deren Subklassen
+	</p>
+	<p>
+	Exceptions sind throwable
+	</p>
+	<img src="files/exceptions/grafik1.png" width="860" alt="callstack">
+	
+	<h3>Arten von Exceptions</h3>
+	
+	<ol class="myol">
+		<li>checked exception
+			<ul class="myul">
+				<li>Ausnahmen, die vorhersehbar sind</li>
+				<li>Ausnahmen, die durch den Programmierer selbst behandelt werden k&ouml;nnen (catch)
+				
+				<img src="files/exceptions/beispiel.png">
+				</li>
+				
+			</ul>
+		</li>
+		<li>error
+			<ul class="myul">
+				<li>Ausnahme, die nicht durch den Programmierer behandelt werden k&ouml;nnen
+				<img src="files/exceptions/beispiel2.png">
+				</li>
+			</ul>
+		</li>
+		<li>runtime exception
+			<ul class="myul">
+				<li>k&ouml;nnen nicht gefangen werden</li>
+				<li>"programminterne" Ausnahmen</li>
+				<li> Bsp.:
+					<ul class="myul">
+						<li>a) Division druch 0</li>
+						<li>b) NullPointerException</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ol>
 	
 	
+	<table class="mytable" border="1">
+	
+		<tr>
+			<th>unchecked exception</th>
+			<th>checked exception</th>
+		</tr>
+		
+		<tr>
+			<td>error</td>
+			<td> </td>
+		</tr>
+		
+		<tr>
+			<td>runtime exception</td>
+			<td> </td>
+		</tr>
+		
+		<tr>
+			<td>kein Auffangen erforderlich</td>
+			<td>Auffangen erforderlich</td>
+		</tr>
+	
+	</table>
 	
 	
+	<p>
+	Ausnahmen werden behandelt, indem die geworfene Ausnahme gefangen (catch) wird
+	</p>
 	
+	<p>
+	das Fangen von Ausnahmen erfolgt in einem 
+	</p>
+	
+	<p>
+	try ... catch ... finally<br>
+	Block
+	</p>
+	
+	<h3>try - Block</h3>
+	<p>
+	kapselt den kritischen Programmabschnitt, der mutmaßlich eine Ausnahme wirft
+	</p>
+	
+	<h3>catch - Block</h3>
+	<p>
+	f&auml;ngt die geworfene Ausnahme und reagiert darauf
+	</p>
+	<p>
+	es d&uuml;rfen mehere catch-Bl&ouml;cke pro try-Block definiert werden
+	</p>
+	
+	
+	<div class="mycode">
+	<p>
+	<span class="keyword">try</span>{
+	</p>
+	<p>
+	}
+	</p>
+	<span class="keyword">catch</span>(ExceptionA ea){
+	</p>
+	...
+	<p>
+	}
+	</p>
+	<span class="keyword">catch</span>(ExceptionB eb){
+	</p>
+	...
+	<p>
+	}
+	</p>
+	</div>
+	
+	<p>
+	<span class="blue">Hinweis:</span>
+	<ul class="myul">
+		<li>keinen leeren catch-Bl&ouml;cke</li>
+		<li>nach M&ouml;glichkeit spezifische Ausnahmen fangen</li>
+		<li>vermeiden: catch(Exception e){ ... }</li>
+	</ul>
+	</p>
+	
+	
+	<h3>finally - Block</h3>
+	
+	<p>
+	wird immer ausgef&uuml;hrt, sobald der try-Block oder der catch-Block endet
+	</p>
+	
+	<div class="mycode">
+	<p>
+	<span class="keyword">try</span>{
+	</p>
+	
+	"Datei &ouml;ffnen"<br>
+	"mit der Datei arbeiten"
+	<p>
+	}
+	</p>
+	
+	<p>
+	<span class="keyword">catch</span>(Datei-Nicht-Gefunden Ex){
+	</p>
+	...
+	<p>
+	}
+	</p>
+	
+	<p>
+	<span class="keyword">finally</span>{
+	</p>
+	... aufr&auml;umen
+	<p>
+	}
+	</p>
+	</div>
+	
+	<!-- -->
+
+	
+	<div class="mycode">
+	<p>
+	<span class="keyword">try</span>{
+	</p>
+	
+	<p>
+	}
+	</p>
+	
+	<p>
+	<span class="keyword">catch</span>(Exception e){
+	</p>
+	
+	<p>
+	}
+	</p>
+	
+	<p>
+	<span class="keyword">finally</span>{
+	</p>
+	
+	<p>
+	}
+	</p>
+	
+	</div>
+	
+	<h3>in Java 8</h3>
+	<div class="mycode">
+	<p>
+	<span class="keyword">try</span>{
+	</p>
+	ausgabe = new Pr&uuml;fw&ouml;rter(...())
+	<p>
+	}
+	</p>
+	<span class="comment">//try with ressource statement</span>
+	<p>
+	<span class="keyword">catch</span>(){
+	</p>
+	<p>
+	}
+	</p>
+	</div>
+	<img src="files/exceptions/callstack.png" width="860" alt="callstack">
+	
+	
+	</article>
 	
 	
 	
