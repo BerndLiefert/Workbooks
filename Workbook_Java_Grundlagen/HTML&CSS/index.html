@@ -7,6 +7,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/menu.css">
+<link rel="stylesheet" type="text/css" href="css/highlight.css">
 
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -583,8 +584,195 @@
 	<img src="files/exceptions/callstack.png" width="860" alt="callstack">
 	
 	
+	<h3>eigene Exception-Klassen</h3>
+		<p>
+		werden von Exception abgeleitet
+		</p>
+	
+	<div>
+<div id="rownumbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></div>
+<div id="preview" class="mycodehighlight">
+
+<span class="keyword">class</span>&nbsp;MeineException&nbsp;<span class="keyword">extends</span>&nbsp;Exception{<br><br>&nbsp;&nbsp;&nbsp;&nbsp;MeineException(<span class="keyword">String</span>&nbsp;msg){<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">super</span>(msg);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>}
+
+
+</div>
+<div class="clear"></div>
+</div>
+	
+	
+	
+	<p>
+	Wozu eigene Exception-Klassen?
+	</p>
+	<p>
+	<span class="blue">Antwort:</span> damit auf unterschiedliche Ausnahmen gezielt ein catch-Block reagiert werden kann
+	</p>
+	<img src="files/exceptions/vs.png" alt="vs">
 	</article>
 	
+	
+	
+		<article class="topic">
+	
+	<h2 class="generics"><a id="generics">Generics</a></h2>
+	<p>
+	<h3>Wozu Generics?</h3>
+	
+	mit Generics l&auml;sst sich die konkrete Verwendung einer Klasse zu dem Zeitpunkt festlegen, wenn die Instanz der Klasse gebildet wird
+	</p>
+	<img src="files/generics/grafik1.png" alt="generics">
+	
+	
+	<p>
+	um Klassen besser wiederverwenden zu k&ouml;nnen
+	</p>
+	
+	<p>
+	um Fehler bereits zur &Uuml;bersetzungszeit zu finden -&gt; Compiler pr&uuml;ft Typvertr&auml;glichkeiten
+	</p>
+	
+	
+	<p>
+	Einsatz von generischen Klassen m&ouml;glich immer unter Angabe der Typparameter, da bei RAW-Type-Verwendung
+	der Compiler die Typpr&uuml;fung nicht durchf&uuml;hrt (unchecked conversion)
+	</p>
+	<img src="files/generics/grafik2.png" alt="generics">
+	
+	<p>
+	Typparameter d&uuml;rfen auch bei der Definition von Methoden eingesetzt werden
+	</p>
+	
+	
+	<div>
+<div id="rownumbers">1<br>2<br>3<br>4<br>5<br></div>
+<div id="preview" class="mycodehighlight"><span class="keyword">public</span>&nbsp;<t>&nbsp;<span class="keyword">boolean</span>&nbsp;vergleiche&nbsp;(Klasse<t>&nbsp;o1,&nbsp;Klasse<t>&nbsp;o2){<br><br>...<br><br>}</t></t></t></div>
+<div class="clear"></div>
+</div>
+
+<p>
+der Einsatz der Typparameter f&uuml;r Methoden sorgt wiederum f&uuml;r Typsicherheit
+</p>
+
+<p>
+Entwicklung der Klasse f&auml;llt selten auf den gleichen Zeitpunkt, wie deren Verwendung
+</p>
+
+<div>
+<div id="rownumbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br></div>
+<div id="preview" class="mycodehighlight"><span class="keyword">class</span>&nbsp;Klasse&lt;T&gt;{<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">boolean</span>&nbsp;vergleiche(T&nbsp;t1,&nbsp;T&nbsp;t2){<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(t1&nbsp;==&nbsp;t2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;0;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(t1&nbsp;&gt;&nbsp;t2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;1;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;-1<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>}</div>
+<div class="clear"></div>
+</div>
+	
+<div>
+<div id="rownumbers">1<br>2<br>3<br>4<br>5<br></div>
+<div id="preview" class="mycodehighlight">Klasse&lt;<span class="keyword">String</span>&gt;&nbsp;ksA&nbsp;=&nbsp;new&nbsp;Klasse&lt;&gt;();<br>Klasse&lt;<span class="keyword">String</span>&gt;&nbsp;ksB&nbsp;=&nbsp;new&nbsp;Klasse&lt;&gt;();<br><br>if(ksA.vergleiche(ksB)&nbsp;&gt;&nbsp;0)<br>...</div>
+<div class="clear"></div>
+</div>	
+	
+	
+	<p>
+	das kann zu Problemen f&uuml;hren, weil u.U. die Implementierung der Methode einer Klasse nicht zu den sp&auml;ter verwendeten Typargumenten passt
+	</p>
+	<p>
+	Bsp.: &gt; ist f&uuml;r String nicht definiert
+	</p>
+	<p>
+	aus diesem Grund l&auml;sst sich der Typparameter einer Klasse einschr&auml;nken
+	</p>
+	
+	
+	<div>
+<div id="rownumbers">1</div>
+<div id="preview" class="mycodehighlight"><span class="keyword">class</span>&nbsp;Klasse&nbsp;&lt;T&nbsp;<span class="keyword">extends</span>&nbsp;Numbers&gt;</div>
+<div class="clear"></div>
+</div>
+
+<h3>Das Collection-Framework</h3>
+	<p>
+	"Rahmenwerk" f&uuml;r Datenstrukturen (dynamisch)
+	</p>
+	<p>
+	im Collection-Framework finden wir
+		<ol class="myol">
+			<li>Interfaces (Verhalten von Datenstrukturen)</li>
+			<li>Implementierungen (Klassen, die die Interfaces implementieren)</li>
+			<li>Algorithmen, die n&uuml;tzliche Funktionen f&uuml;r Datensammlungen bereitstellen</li>
+		</ol>
+	</p>
+	
+	<p>
+	<span class="blue">Vorteile:</span>
+	<ul class="myul">
+		<li>reduziert den Programaufwand</li>
+		<li>verbessert die Qualit&auml;t der Software</li>
+		<li>verbessert die Zusammenarbeit mit anderen durch
+			<ul class="myul">
+				<li>wohldefinierte Schnittstellen</li>
+			</ul>
+		
+		</li>
+	</ul>
+	
+	</p>
+	
+	<p>
+	Collection Interface: die Wurzel der meisten Implementierungen
+	</p>
+	<img src="files/collectionframework/grafik1.png" width="860" alt="collection">
+	
+	<p>
+	Sammlung von Objekten, die als Elemente bezeichnet werden
+	</p>
+	
+	<p>
+	in der Doku <E>, e -> .add(<E>)
+	</p>
+	
+	<p>
+	Set: Menge von Objekten ohne Duplikate
+	</p>
+	
+	<p>
+	List: Liste von Objekten, die Duplikate enthalten darf und sortiert ist
+	</p>
+	
+	<p>
+	Queue: Warteschlange, FIFO "wer zuerst kommt, mahlt zuerst"
+	</p>
+		
+		
+	<p>
+	Deque: eine double ended queue, Warteschlange, FIFO (First In – First Out), LIFO (Last In - First Out)
+	</p>	
+	
+	
+	<p>
+	Map: Schl&uuml;sselwert -&gt; Wert<br>
+	key -&gt; value
+	</p>
+	
+	<img src="files/collectionframework/int.png" alt="list">
+	
+	<h3>Aufgabe</h3>
+	
+	<p>
+	Interface Vehicle:<br>
+	move(distance:int) //bewegt das Fahrzeug<br>
+	startEngine(); //startet den Motor<br>
+	stopEngine(); //stoppt dem Motor<br>
+	
+	</p>
+	<p>
+	Klasse Car implementes Vehicle:<br>
+	km += distance<br>
+	engineStarted = true<br>
+	engineStartd = false
+	</p>
+	
+	</article>
+	
+
 	
 	
 	
