@@ -1,0 +1,172 @@
+@CHARSET "ISO-8859-1";
+
+
+*{
+	margin:0;
+	padding:0;
+	font-family:Tahoma,Arial,sans-serif;
+}
+
+
+#forkme{
+	position:fixed;
+	top:0px;
+	right:0px;
+	z-index:9000;
+	
+}
+
+html, body{
+	overflow-y: scroll;
+	
+}
+
+html, body, #wrapper{
+min-height:800px;
+	
+}
+
+#wrapper{
+	width:860px;
+	margin:0 auto;
+}
+
+
+#header{
+	background:#01A9DB;
+	min-height:100px;
+}
+
+#logo{
+background:#01A9DB;
+}
+
+#sitename{
+	text-align:center;
+	color:#FFFFFF;
+}
+
+#siteslogan{
+	text-align:center;
+	font-style:italic;
+	color:#FFFFFF;
+}
+
+h1, h2, p{
+	padding:10px;
+}
+
+
+
+#copy{
+	position:fixed;
+	bottom:0px;
+	right:0px;
+	padding:10px;
+}
+
+.pagelink{
+color:white;
+text-decoration:none;
+padding:10px;
+background:#01A9DB;
+margin:10px;
+}
+
+.curpage{
+color:white;
+text-decoration:none;
+padding:10px;
+background:gray;
+margin:10px;
+}
+
+.pagetitle{
+text-align:center;
+padding:20px;
+}
+
+.post{
+background:#01A9DB;
+padding:10px;
+margin:10px;
+}
+
+.post a{
+color:#FFFFFF;
+}
+
+.info{
+padding:10px;
+margin:10px;
+color:white;
+background:green;
+border:5px solid darkgreen;
+}
+
+.error{
+padding:10px;
+margin:10px;
+color:white;
+background:red;
+border:5px solid darkred;
+}
+
+.debug{
+padding:10px;
+margin:10px;
+color:white;
+background:organe;
+border:5px solid #DF7401;
+}
+
+.action{
+	padding:10px;
+	margin:10px;
+	
+}
+
+#navigation{
+position:relative;
+}
+
+#myloginform{
+	position:absolute;
+	top:0px;
+	right:0px;
+	margin:8px;
+	
+}
+
+#myloginform input{
+	width:80px;
+	
+}
+
+#myloginform label{
+	color:white;
+	
+}
+
+#logout{
+	position:absolute;
+	top:0px;
+	right:0px;
+	margin:10px;
+	
+}
+
+#logout a{
+	color:white;
+	
+}
+
+.myul{
+margin:0 0 0 20px;
+}
+
+/* Syntax Hilighting*/
+
+.keyword{
+font-weight:bold;
+}

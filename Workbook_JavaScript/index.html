@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/menu.css" rel="stylesheet" type="text/css">
+
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+  
+ 
+<title>JavaScript</title>
+<meta charset="utf-8"> 
+
+</head>
+<body>
+
+<a href="https://github.com/BerndLiefert" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+<div id="wrapper">
+<header id="navigation">
+<div id="logo">
+	<h1 id="sitename">JavaScript</h1>
+	<h2 id="siteslogan">"Death to all Hipsters!"</h2>
+
+
+</div>
+<nav>
+<ul>
+		<li><a href="#">Grundlagen</a>
+		<ul>
+			  <li><a href="#einbindung">Einbindung</a></li>
+
+			  <li><a href="#variablen">Variablen</a></li>
+
+			  <li><a href="#kommentare">Kommentare</a></li>
+
+			  <li><a href="#arrays">Arrays</a></li>
+
+			  <li><a href="#schleifen">Schleifen</a></li>
+			 
+			 <li><a href="#ifanweisung">bedingte Anweisung</a></li>
+			 
+			  <li><a href="#funktionen">Funktionen</a></li>
+			  
+			   <li><a href="#objekte">Objekte</a></li>
+
+			   </ul>
+			   </li>
+			   
+</ul>
+</nav>
+</header>
+
+<div class="post">
+
+		<h2><a id="einbindung">Einbindung:</a></h2>
+
+		&lt;script type="text/javascript"&gt;<br>
+
+		console.log("Hello World");<br>
+
+		&lt;/script&gt;
+</div>
+
+<div class="post">
+	
+		<h2><a id="variablen">Variablen:</a></h2>
+
+		&lt;script type="text/javascript"&gt;<br>
+
+		var text = "Hello World";<br>
+
+		var zahl = 9001;<br>
+
+		alert(text + ' ' + zahl);<br>
+
+		&lt;/script&gt;<br>
+
+		<br>
+
+		Anf&uuml;hungszeichen entwerten:<br>
+
+		var text = "\"Hello World\"";<br>
+
+		console.log(text);
+		<ul class="myul">
+
+		  <li>\t - Tab</li>
+
+		  <li>\n - Zeilenumburch</li>
+
+		</ul>
+</div>
+
+<div class="post">
+
+		<h2><a id="kommentare">Kommetare:</a></h2>
+
+		//Comment<br>
+
+		<br>
+
+		/*<br>
+
+		Comment<br>
+
+		*/
+
+</div>
+
+<div class="post">
+
+		<h2><a id="arrays">Arrays:</a></h2>
+
+		<br>
+
+		myarray = [1, 2, 3, 4, 5];<br>
+
+		<br>
+
+		L&auml;nge des Arrays<br>
+
+		myarray.length;<br>
+
+		<br>
+
+		Bestimmtes Element ausgeben<br>
+
+		alert(myarray[0]);<br>
+
+		gibt das Erste Element des Arrays aus
+
+</div>
+	
+<div class="post">
+	
+		<h2><a id="schleifen">Schleifen:</a></h2>
+		For-Schleife<br>
+		for(var i=0; i &lt; myarray.lengt; i++){<br>
+		console.log(myarray[i]);<br>
+		}<br>
+		<br>
+		While-Schleife<br>
+		<br>
+		var i = 10;<br>
+		while(i &gt; 0){<br>
+		console.log(i);<br>
+		i--;<br>
+		}<br>
+		<br>
+		Do-While-Schleife<br>
+		<br>
+		var i = 1;<br>
+		var text = "";<br>
+		do{<br>
+		text &nbsp;+= i + "\n";<br>
+		i++;<br>
+		} while(i &lt;= 10);<br>
+		alert(text);<br>
+		<br>
+		<br>
+		For-In-Schleife<br>
+		<br>
+		var array = [1, 2, 3];<br>
+		for (var item in array){<br>
+		console.log(item);<br>
+		//gibt den Index aus, also 0 1 2<br>
+		}<br>
+		<br>
+		<br>
+		var myarray = [1, 2, 3];<br>
+		<br>
+		for(var step in myarray){<br>
+		console.log(myarray[step]);<br>
+		//gibt den Wert mit dem Index step aus, also 1 2 3<br>
+		}
+		
+</div>
+
+<div class="post">
+		<h2><a id="ifanweisung">bedingte Anweisung (if-Anweisung):</a></h2>
+
+		var isEven = function(number) {<br>
+		  if(number%2 == 0){<br>
+			 return true; <br>
+			  }else{<br>
+				  return false;<br>
+				  }<br>
+		};<br><br>
+		
+		isEven(2);
+
+
+
+</div>
+
+<div class="post">
+
+		<h2><a id="funktionen">Funktionen:</a></h2>
+
+		function  greeting(name) {<br>
+		console.log("Great to see you," + " " + name);<br>
+		};<br>
+		
+
+Funktionsaufruf<br><br>
+greeting('Bernd');		
+		
+</div>
+
+
+
+<div class="post">
+
+		<h2><a id="objekte">Objekte:</a></h2>
+
+		<h3>Literal Notation:</h3><br><br>
+		var myObj = {<br>
+		name: 'Bernd',<br>
+		age: 31<br>
+		};<br>
+		
+		
+		<br>
+		<h3>mit Objekt Konstruktor</h3><br><br>
+		var myObj = new Object;<br>
+		myObj.name = "Bernd";<br>
+		myObj.age = 31;<br>
+		
+		<br>
+		<h3>Auf Eigenschaften zugreifen</h3>
+		<br>
+		<br>
+		
+		var myName = myObj.name;
+		
+		
+		<br>
+		<br>
+		<h3>Methoden</h3>
+		<br>
+		<br>
+			var bernd = new Object();<br>
+			bernd.name = "Bernd Liefert";<br>
+			bernd.age = 31;<br>
+			bernd.setAge = function (newAge){<br>
+			  bernd.age = newAge;<br>
+			};<br>
+			<br>
+			<br>
+			bob.setAge(40);
+			
+			
+			
+			
+			<br>
+			<br>
+			<h3>Custom Constructors</h3>
+			<br>
+			
+			function Person(name,age) {<br>
+				this.name = name;<br>
+				this.age = age;<br>
+			}<br>
+<br>
+var bob = new Person("Bob Smith", 30);<br>
+var susan = new Person("Susan Jordan", 25);<br>
+var george = new Person("George Washington", 275);
+	
+	<br>
+	<br>
+	<h3>Literally Speaking</h3>
+	<br>	
+	var james = {<br>
+    job: "programmer",<br>
+    married: false,<br>
+    speak: function(word) {<br>
+        console.log("Hello, I am feeling "+ word);<br>
+		}<br>
+	};<br>
+<br><br>
+	james.speak("great");<br>
+	james.speak("just okay");
+
+<br>
+<br>
+<h3>bracket notation</h3>
+<br>
+	var james = {<br>
+    job: "programmer",<br>
+    married: false<br>
+};<br>
+<br>
+<br>
+var aProperty = ["job"];<br>
+
+console.log(james[aProperty]);<br>
+
+
+<br>
+<br>
+<h3>List ALL the Properties!</h3>
+<br>
+
+	var nyc = {<br>
+    fullName: "New York City",<br>
+    mayor: "Bill de Blasio",<br>
+    population: 8000000,<br>
+    boroughs: 5<br>
+};<br>
+<br>
+
+for(step in nyc){<br>
+    console.log(nyc[step]);<br>
+    }<br>
+ <br>
+ <br>
+ <h3>Prototype to the Rescue</h3>
+ <br>
+ 
+ function Dog(breed){<br>
+  this.breed = breed;<br>
+};<br>
+<br>
+
+var buddy = new Dog("golden Retriever");<br><br>
+
+Dog.prototype.bark = function() {<br>
+  console.log("Woof");<br>
+};<br>
+<br>
+buddy.bark();<br><br>
+
+var snoopy = new Dog("Beagle");<br>
+snoopy.bark();
+	
+</div>
+
+
+</div>
+
+</body>
+</html>
