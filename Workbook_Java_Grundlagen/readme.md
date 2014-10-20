@@ -38,7 +38,7 @@ TreeSet<Car> -&gt; ???
 
 ![compare2.png](compare2.png)
 
-![comparator.png](comparator.png)
+![comparator.png](Comparator.png)
 
     													dependency injection
     TreeSet&lt;HoppeCar&gt; thc = new TreeSet&lt;&gt;(new MileageCoparator())
