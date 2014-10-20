@@ -1,6 +1,6 @@
     Quellcode einrücken [Alt] + [Umschalt] + [F]
 
-##sortierte Kollektionen
+##sortierte Kollektionen 10/20/2014 8:00:00 AM 
 
 * einige Kollenktionen fügen die Elemente &lt;E&gt; auf Basis einer Sortierreihenfolge ein
 
@@ -37,6 +37,30 @@ TreeSet<Car> -&gt; ???
 - das Interface Comparable erwartet die Implementierung der abstrakten Methode **compareTo**
 
 ![compare2.png](compare2.png)
+
+![comparator.png](comparator.png)
+
+    													dependency injection
+    TreeSet&lt;HoppeCar&gt; thc = new TreeSet&lt;&gt;(new MileageCoparator())
+    TreeSet&lt;HoppeCar&gt; thcA = new TreeSet&lt;&gt;(new HorsePowerCoparator())
+														dependecy injection
+
+##Map 10/20/2014 4:00:00 PM 
+
+    Key => Value
+
+<u>Hash</u>Map, <u>Tree</u>Map
+
+TreeMap -&gt; sortierte Map   
+HashMap -&gt; Hashfunktion beschleunigt den Zugriff auf die Elemente    
+
+
+	class HashMap<K, V>
+	//K -> Typ der Schlüsselwerte
+	//V -> Typ der gemappten Werte
+
+![HashMap](hashmap.png)
+
 
 
 
