@@ -195,7 +195,7 @@
 	</p>
 	<img src="files/tostring/grafik1.png" width="860px" alt="bild">
 	
-	<h3>Vergleiche</h3>
+	<h3>Vergleiche equals()</h3>
 	die Vergleiche auf Gleichheit f&uuml;hren bei primitiven Datentypen immer zu den "richtigen" Ergebnissen
 	<div class="mycode">
 	<p>
@@ -223,7 +223,7 @@
 	
 	<ol class="myol">
 		<li>Reflexivit&auml;t: jedes Objekt liefert im Vergleich mit sich selbst TRUE</li>
-		<li>Symetrie: wenn x "==" y TRUE ist, dann muss auch y "==" x TRUE sein</li>
+		<li>Symmetrie: wenn x "==" y TRUE ist, dann muss auch y "==" x TRUE sein</li>
 		<li>Transitivit&auml;t: wenn x "==" y TRUE ist und y "==" z TRUE ist, dann muss auch x "==" z TRUE sein</li>
 		<li>Konsistenz: x "==" y muss auch bei wiederholter Ausf&uuml;hrung TRUE/FALSE sein</li>
 		<li>f&uuml;r alle x != 0 -&gt; x "==" null muss FALSE sein</li>
@@ -590,7 +590,7 @@
 		</p>
 	
 	<div>
-<div id="rownumbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></div>
+<div class="rownumbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></div>
 <div id="preview" class="mycodehighlight">
 
 <span class="keyword">class</span>&nbsp;MeineException&nbsp;<span class="keyword">extends</span>&nbsp;Exception{<br><br>&nbsp;&nbsp;&nbsp;&nbsp;MeineException(<span class="keyword">String</span>&nbsp;msg){<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">super</span>(msg);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>}
@@ -645,7 +645,7 @@
 	
 	
 	<div>
-<div id="rownumbers">1<br>2<br>3<br>4<br>5<br></div>
+<div class="rownumbers">1<br>2<br>3<br>4<br>5<br></div>
 <div id="preview" class="mycodehighlight"><span class="keyword">public</span>&nbsp;<t>&nbsp;<span class="keyword">boolean</span>&nbsp;vergleiche&nbsp;(Klasse<t>&nbsp;o1,&nbsp;Klasse<t>&nbsp;o2){<br><br>...<br><br>}</t></t></t></div>
 <div class="clear"></div>
 </div>
@@ -659,13 +659,13 @@ Entwicklung der Klasse f&auml;llt selten auf den gleichen Zeitpunkt, wie deren V
 </p>
 
 <div>
-<div id="rownumbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br></div>
+<div class="rownumbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br></div>
 <div id="preview" class="mycodehighlight"><span class="keyword">class</span>&nbsp;Klasse&lt;T&gt;{<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">boolean</span>&nbsp;vergleiche(T&nbsp;t1,&nbsp;T&nbsp;t2){<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(t1&nbsp;==&nbsp;t2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;0;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(t1&nbsp;&gt;&nbsp;t2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;1;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;-1<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>}</div>
 <div class="clear"></div>
 </div>
 	
 <div>
-<div id="rownumbers">1<br>2<br>3<br>4<br>5<br></div>
+<div class="rownumbers">1<br>2<br>3<br>4<br>5<br></div>
 <div id="preview" class="mycodehighlight">Klasse&lt;<span class="keyword">String</span>&gt;&nbsp;ksA&nbsp;=&nbsp;new&nbsp;Klasse&lt;&gt;();<br>Klasse&lt;<span class="keyword">String</span>&gt;&nbsp;ksB&nbsp;=&nbsp;new&nbsp;Klasse&lt;&gt;();<br><br>if(ksA.vergleiche(ksB)&nbsp;&gt;&nbsp;0)<br>...</div>
 <div class="clear"></div>
 </div>	
@@ -683,7 +683,7 @@ Entwicklung der Klasse f&auml;llt selten auf den gleichen Zeitpunkt, wie deren V
 	
 	
 	<div>
-<div id="rownumbers">1</div>
+<div class="rownumbers">1</div>
 <div id="preview" class="mycodehighlight"><span class="keyword">class</span>&nbsp;Klasse&nbsp;&lt;T&nbsp;<span class="keyword">extends</span>&nbsp;Numbers&gt;</div>
 <div class="clear"></div>
 </div>
