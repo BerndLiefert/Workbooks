@@ -1,5 +1,7 @@
     Quellcode einrücken [Alt] + [Umschalt] + [F]
 
+![](programming.gif)
+
 ##sortierte Kollektionen 10/20/2014 8:00:00 AM 
 
 * einige Kollenktionen fügen die Elemente &lt;E&gt; auf Basis einer Sortierreihenfolge ein
@@ -60,6 +62,57 @@ HashMap -&gt; Hashfunktion beschleunigt den Zugriff auf die Elemente
 	//V -> Typ der gemappten Werte
 
 ![HashMap](hashmap.png)
+
+
+##Klassen- und Objektbeziehungen 10/21/2014 8:14:02 AM 
+
+- es gibt 3 Arten von Objektbeziehungen
+
+![Objektbeziehungen](objektbeziehungen.png)
+
+
+- für die Implementierung der Beziehungen in einer OOP-Sprache sind weitere Kriterien zu beachten
+    1. Richtung der Beziehung, in welcher Klasse muss die Beziehung gespeichert werden
+    2. Multiplizität/Kardinalitäten, auf welche Art werden die Beziehungen gespeichert (skalare Objektvariablen, Datenstrukturen)
+
+1. Richtung der Beziehung
+
+![richtungbeziehung](files/richtungbeziehung.png)
+
+2. Multiplizitäten / Kardinalitäten
+
+![richtungbeziehung](files/multiplizitaeten.png)
+
+- Speichern der Beziehungen
+
+0, 1 -&gt; skalare Variablen
+     
+	class A{    
+		B b = null;    
+	}    
+
+1 .. 4 -&gt; Datenfelder
+
+	class A{    
+		B [] b = new B[4];
+	} 
+
+![](files/star.png) -&gt; Kollektionen
+
+- Methoden zum Verwalten der Beziehung
+	1. das Herstellen einer Beziehung wollen wir abstrakt als **setLink()** bezeichnen
+	2. das Löschen einer Beziehung wollen wir abstrakt als **removeLink()** bezeichnen
+	3. das Abfragen einer Beziehung wollen wir abstrakt als **getLink()** bezeichnen
+		1. das Abfragen aller Beziehungen **getAllLinks()**
+
+Bsp.:
+
+![](files/getlink.png)
+
+![](files/klassewohnung.png)
+
+![](files/multiplizitaet.png)
+
 
 
 
