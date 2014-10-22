@@ -3,7 +3,7 @@ PHP & MySQL Workbook	Stand: 10/18/2014 3:43:35 PM
 Objekte
 -------
 
-![paul](https://github.com/BerndLiefert/Workbooks/blob/master/Workbook_PHP%26MySQL/files/paul.png)
+![paul](files/paul.png)
 
 
 
