@@ -114,7 +114,101 @@ Bsp.:
 ![](files/multiplizitaet.png)
 
 
+##Entwurfsmuster 10/22/2014 2:04:51 PM 
 
+- sind in der OOP eingesetzte, praktisch bewährte Herangehensweisen an bestimmte Gruppen von Aufgabenstellungen
+- "Gang Of Four" (GOF) haben Entwurfsmuster definiert nach folgenden Kategorien:
+	1. Erzeugungsmuster, Wie kann man Objekte "sinnvoll" erzeugen?
+	2. Verhaltensmuster, Wie kann Verhalten am besten in Klassen umgesetzt werden? (Iterator)
+	3. Strukturmuster, Beschreiben sinnvolle Klassenhierachien zum speichern von Informationen.
+
+###Erzeugungsmuster
+
+1. Singleton
+	- stellt sicher, dass es von einer Klasse immer nur genau eine Instanz gibt
+	- dazu wird die Kontrolle über das Erzeugen des Objekts in die Klasse verlagert
+	- die Klasse stellt eine Methode bereit, damit von außen auf die Instanz zugegriffen werden kann **getInstance()**
+	- diese Methode ist static, Klasse.getInstance()
+	- alle anderen Möglichkeiten, Instanzen der Klasse zu bekommen werden deaktiviert
+	- (a) die Konstruktoren der Klasse werden **private**
+	- (b) **clone()** wird privatisiert 
+
+###Beispiel1 Klasse Singleton
+
+	private static Singleton instance = null;
+
+	private Singleton(){
+        
+    }
+    
+    @Override
+    protected Object clone() throws CloneNotSupportedException{
+        throw new CloneNotSupportedException();
+        
+        
+    }
+
+    public static Singleton getInstance(){
+
+		if(instance == null)
+			instance = new Singleton();
+
+		return instance;
+	}
+	
+###Beispiel2 Klasse Singleton
+
+	private static Singleton instance = new Singleton();
+
+	private Singleton(){
+        
+    }
+    
+    @Override
+    protected Object clone() throws CloneNotSupportedException{
+        throw new CloneNotSupportedException();
+        
+        
+    }
+
+	public static Singleton getInstance(){
+        
+        return instance;
+                
+    }
+
+- das Muster führt zu Klassenkontrollierten Instanzen
+- das Muster wird immer dann eingesetzt, wenn nur eine Instanz der Klasse existieren soll oder darf
+
+
+###Aufgabe
+	         +---+   +---+   +---+
+	  Anfang |   |---|   |---|   | Ende
+ 	         +---+   +---+   +---+
+
+- Wie muss die Verlinkung auf den Nachfolger in der Klasse aussehen?
+- Wie füge ich neue Elemente ans Ende, am Anfang oder in der Mitte ein?
+- Wie lösche ich Elemente von Anfang, vom Ende oder aus der Mitte?
+
+- neue Elemente kommen oben auf den Stapel
+- und ausgekellert wird immer das oberste Element
+- Arbeiten hier mit Arrays fesster größe
+- =&gt; Speicher voll -&gt; StackOverflow
+
+Robert Sedgewick
+
+###Kellerspeicher (stack)
+
+	 ----+      +---> pop
+     	 | push |
+	 	 v      |
+		+--------+
+		|        |
+		+--------+
+		|        |
+		+--------+
+		|    	 |
+		+--------+	
 
 
 
