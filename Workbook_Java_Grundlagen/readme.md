@@ -210,6 +210,72 @@ Robert Sedgewick
 		|    	 |
 		+--------+	
 
+##Fabrik/Fabrikmethode
+[http://de.wikipedia.org/wiki/Fabrikmethode](http://de.wikipedia.org/wiki/Fabrikmethode "Fabrikmethode(Wikipedia)")
+
+- eine Fabrik soll ähnliche Objekte erzeugen können
+
+![](files/fabrikmethode.png)
+
+![](files/proggegeninterf.png)
+
+![](files/fabrikmethode2.png)
+
+###Übung
+
+- Spielzeug herstellen: Brummkreisel, Pistole, Brummbär, Barbie / Gemeinsamkeit: spielen();
+- beide Varianten programmieren
+
+###Zusammenfassung
+
+Das Muster bietet der Applikation/dem Client eine einheitliche Schnittstelle, **+erzeuge():Fahrzeug**, zum Erzeugen verschiedener, ähnlicher Objekte.
+
+Das eigentliche Erzeugen der Objekte erfolgt in Unterklassen oder in der Fabrikmethode.
+
+- Schreiben Sie eine abstrakte Klasse oder ein Interface, die die Methoden zum Erzeugen der Objekte deklarieren. **Fabrik**
+- Schreiben Sie konkrete Fabrikklassen die diese Erzeugemethoden implementieren **SolarAutoFabrik** **TretAutoFabrik** **DieselAutoFabrik**
+- Schreiben Sie Produktklassen (DieselAuto, SolarAuto und TretAuto), die ein gemeinsames Interface (Fahrzeug) implementieren
+
+##abstrakte Fabrik
+
+Die abstrakte Fabrik bietet eine Schnittstelle zum Erstellen ganzer Objektfamilien, ohne deren konkreten Klassen zu benennen.
+
+###Beispiel
+
+	Text-Tabellen
+							Spalten
+	1, Borrmann   ---->  +----------+---------+
+	2, Köcher            |   Zelle  |         | Zeilen
+	3, Bahr              +----------+---------+
+	4, Steinhagen        | ...      |         |
+	5, Uhlemann
+	6, Bertram
+	7, Stabenow
+
+	HTML-Tabellen
+
+	<table>
+		<tr>
+		   <td></td>
+		</tr>
+	</talbe>
+
+![](files/tabellen.png)
+![](files/abstrakteFabrik.png)
+
+
+###Beispiel
+
+![](files/abstrakteFabrikB.png)
+
+
+
+
+
+
+
+
+
 
 
     
