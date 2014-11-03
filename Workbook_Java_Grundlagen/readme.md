@@ -285,6 +285,20 @@ Die abstrakte Fabrik bietet eine Schnittstelle zum Erstellen ganzer Objektfamili
 
 ![](files/composite2.png)
 
+Übung Zusammenfassung: 
+
+1. Definieren Sie eine abstrakte Klasse/Interface, das die Methoden der Komponenten/des Kompositors definiert (Bsp.: **methodeA()**)
+2. Implementieren Sie die abstrakten Methoden in den Komponentklassen/Kompositumklassen    
+**DebuggerEmail**    
+**DebuggerSMS**     
+**DebuggerLogfile**    
+**Kompositum**
+3. Fügen Sie Methoden dem Kompositum hinzu, um Kindknoten **hinzufügen** oder **entfernen** zu können
+
+[Wikipedia: Kompositum](http://de.wikipedia.org/wiki/Kompositum_(Entwurfsmuster))
+
+[http://www.philipphauer.de/study/se/design-pattern/composite.php](http://www.philipphauer.de/study/se/design-pattern/composite.php)
+
 
 
 
