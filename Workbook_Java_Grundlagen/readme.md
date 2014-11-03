@@ -269,6 +269,23 @@ Die abstrakte Fabrik bietet eine Schnittstelle zum Erstellen ganzer Objektfamili
 ![](files/abstrakteFabrikB.png)
 
 
+[http://de.wikipedia.org/wiki/Dependency_Injection](http://de.wikipedia.org/wiki/Dependency_Injection)
+
+#Strukturmuster
+
+- Ziel: Schaffen flexiblere Strukturen, die sich leicht erweitern lassen
+- Composite-Pattern: 
+	- führt Objekte zusammen, und lässt sie nach außen hin in ein großes Ganzes erscheinen. 
+	- Im "Hintergrund" wird einen Baumstruktur verwendet
+	- der Zugriff auf die Elemente des Composite-Objektes erfolgt rekursiv
+
+![](files/compositepatternbeispiel1.png)
+
+![](files/composite1.png)
+
+![](files/composite2.png)
+
+
 
 
 
