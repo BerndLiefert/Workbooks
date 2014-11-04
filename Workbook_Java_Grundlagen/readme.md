@@ -299,6 +299,26 @@ Die abstrakte Fabrik bietet eine Schnittstelle zum Erstellen ganzer Objektfamili
 
 [http://www.philipphauer.de/study/se/design-pattern/composite.php](http://www.philipphauer.de/study/se/design-pattern/composite.php)
 
+#Dekorierer (Decorator)
+
+- mit diesem Muster kann Objekten zur Laufzeit des Programms zusätzlich Funktionalität zugeordnet werden
+
+Beispiel (Munition Computerspiel):
+
+![](files/dekorierer.png)
+
+- Das neue Verhalten wird dadurch zur Verfügung gestellt, dass der Dekorierer das dekorierte Objekt vollständig kapselt, den Zugriff auf das dekorierte Objekt ermöglicht und die dekorierte Funktionalität selbst anbietet
+
+Zusammenfassung:   
+
+1. Bilden Sie ein Interface/eine abstrakte Klasse, die das zu dekorierende Verhalten kapselt **Vehicle**
+2. Bilden Sie ein eine abstrakte Dekorierklasse, die alle Methoden an das dekorierte Objekt durchreicht **VehicleDecorator**
+3. Entwickeln Sie neue konkrete Dekorierer, die jeweils Verhalten dekorieren **Spoiler, Breitreifen**
+
+#Adapter-Pattern
+
+- der Adapter passt eine "fremde" Objektschnittstelle an die erwartete Schnittstelle eines Clients an
+
 
 
 
