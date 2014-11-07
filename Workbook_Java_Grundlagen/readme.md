@@ -299,7 +299,7 @@ Die abstrakte Fabrik bietet eine Schnittstelle zum Erstellen ganzer Objektfamili
 
 [http://www.philipphauer.de/study/se/design-pattern/composite.php](http://www.philipphauer.de/study/se/design-pattern/composite.php)
 
-#Dekorierer (Decorator)
+##Dekorierer (Decorator)
 
 - mit diesem Muster kann Objekten zur Laufzeit des Programms zusätzlich Funktionalität zugeordnet werden
 
@@ -315,16 +315,111 @@ Zusammenfassung:
 2. Bilden Sie ein eine abstrakte Dekorierklasse, die alle Methoden an das dekorierte Objekt durchreicht **VehicleDecorator**
 3. Entwickeln Sie neue konkrete Dekorierer, die jeweils Verhalten dekorieren **Spoiler, Breitreifen**
 
-#Adapter-Pattern
+##Adapter-Pattern
 
 - der Adapter passt eine "fremde" Objektschnittstelle an die erwartete Schnittstelle eines Clients an
 
+#Verhaltensmuster
+
+- beschreiben die Interaktion zwischen Objekten
+- es geht also um Objektbeziehungen, die erst zur Laufzeit des Programmes entstehen
+
+##Beobachter-Muster (Observer-Pattern)
+
+- ein Beobachteter (Subject) meldet Zustandsänderungen an seine Beobachter (Observer) über eine "schlanke" Schnittstelle
+- der Beobachtete bietet selbst eine Schnittstelle an damit Beobachter sich bei ihm registrieren können
+
+Umsetzung:
+
+1. Definieren Sie ein Interface "Observable" (Alternative: abstrakte Klasse), mit den Methoden attach(Observer), detach(Observer) und inform()
+2. Definieren Sie ein Interface "Observer", mit der Methode update(Observable)
+3. Implementieren Sie die beiden Interfaces in konkreten Subjekt-/Beobachterklassen
+
+##Iterator
+
+- das Pattern erlaubt es, "Listen" von Objekten zu verarbeiten, ohne das bekannt sein muss, wie die Liste intern die Objekte verwaltet
+
+MainApp:
+
+1. neuer Iterator
+2. Autos zum Iterator hinzufügen &lt;= das könnte auch der Konstruktor erledigen
+3. in einer Schleife alle Autos ausgeben
+
+###JavaIterator
+
+- next():E
+- remove():void
+- hasNext():boolean
+
+Beispiel:
+
+	CarListJava implements Iterator
+
+Umsetzung:
+
+1. definieren Sie das Interface Iterator mit geeigneten Methoden zum Durchlaufen einer Menge von Objekten
+
+Beispiel:
+
+	next()		|	next()
+	hasNext()	|	current()
+				|	valid()
+				|	rewind()
+
+	z.B.: Java		z.B.: PHP
+
+Exkurs: Iterable<T>    
+hat eine Methode "iterator()" die einem Iterator liefert
+
+Beispiel:
+
+		Menge
+	 ____________
+	/ 	1, 2 	 \
+   	| 5, 7, 9, 10|
+	\____________/
+
+	<-- Platzhalter für Grafik vom 06.11.2014 -->
+
+###Uebungsaufgabe:
+
+1. Erfassen Sie zu einem Fahrzeug die Daten (s. unterhalb) in einer Datei (pro Zeile ein Datensatz, Attribute "sinnvoll" getrennt)
+	- Hersteller
+	- Farbe
+	- PS
+	- Vmax
+2. Entwickeln Sie eine Klasse die diese daten importiert!
+3. Entwickeln Sie einen geeigneten Iterartor!
+4. Geben Sie die Daten der Fahrzeuge auf dem Bildschirm aus!
+	
 
 
+#Zusammenfassung: Design Patterns
 
+<table>
+<thead>
+	<tr>
+		<th>Erzeugungsmuster</th>
+		<th>Strukturmuster</th>
+		<th>Verhaltensmuster</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>Abstrakte Fabrik    
+		(abstract factory)</td>
+		<td>Adapter</td>
+		<td>Beobachter    
+		(observer)</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
 
-
-
+</tbody>
+</table>
 
 
 
